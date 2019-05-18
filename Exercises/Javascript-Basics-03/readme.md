@@ -1,10 +1,3 @@
-# Javascript Basics 3 - Style Manipulation
-
-- Fork this repository
-- Clone your fork on your pc
-- Each step has a prepared html file to work with, use it
-- COMMIT AFTER EACH STEP, call each commit by the name of the step
-
 ## Goals:
 
 - Understand how to style DOM objects through Javascript
