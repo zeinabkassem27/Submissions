@@ -9,6 +9,10 @@ use App\OrderItem;
 
 class OrderItemsApiController extends Controller
 {
+    public function __construct() {
+        $this->middleware('jwt.auth');
+    }
+    
     public function index()
     {
         $orderItems = OrderItem::all();

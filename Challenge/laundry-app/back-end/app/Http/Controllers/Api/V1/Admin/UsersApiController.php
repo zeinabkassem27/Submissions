@@ -9,6 +9,11 @@ use App\User;
 
 class UsersApiController extends Controller
 {
+    
+    public function __construct() {
+        $this->middleware('jwt.auth');
+    }
+    
     public function index()
     {
         $users = User::all();

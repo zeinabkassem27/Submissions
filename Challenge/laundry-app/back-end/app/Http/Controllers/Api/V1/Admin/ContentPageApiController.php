@@ -9,6 +9,10 @@ use App\Http\Requests\UpdateContentPageRequest;
 
 class ContentPageApiController extends Controller
 {
+    public function __construct() {
+        $this->middleware('jwt.auth');
+    }
+    
     public function index()
     {
         $contentPages = ContentPage::all();

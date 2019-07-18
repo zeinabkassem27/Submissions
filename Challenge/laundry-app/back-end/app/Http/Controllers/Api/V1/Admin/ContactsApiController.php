@@ -9,6 +9,10 @@ use App\Http\Requests\UpdateContactRequest;
 
 class ContactsApiController extends Controller
 {
+    public function __construct() {
+        $this->middleware( 'jwt.auth' )->except( [ 'store' ] );
+    }
+    
     public function index()
     {
         $contacts = Contact::all();

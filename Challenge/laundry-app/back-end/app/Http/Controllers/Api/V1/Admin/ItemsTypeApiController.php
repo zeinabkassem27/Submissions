@@ -9,6 +9,10 @@ use App\ItemsType;
 
 class ItemsTypeApiController extends Controller
 {
+    public function __construct() {
+        $this->middleware('jwt.auth');
+    }
+    
     public function index()
     {
         $itemsTypes = ItemsType::all();

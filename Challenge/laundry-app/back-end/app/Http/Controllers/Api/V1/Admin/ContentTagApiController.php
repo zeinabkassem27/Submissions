@@ -9,6 +9,10 @@ use App\Http\Requests\UpdateContentTagRequest;
 
 class ContentTagApiController extends Controller
 {
+    public function __construct() {
+        $this->middleware('jwt.auth');
+    }
+    
     public function index()
     {
         $contentTags = ContentTag::all();

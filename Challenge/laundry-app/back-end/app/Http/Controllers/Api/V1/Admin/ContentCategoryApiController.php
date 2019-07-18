@@ -9,6 +9,10 @@ use App\Http\Requests\UpdateContentCategoryRequest;
 
 class ContentCategoryApiController extends Controller
 {
+    public function __construct() {
+        $this->middleware('jwt.auth');
+    }
+    
     public function index()
     {
         $contentCategories = ContentCategory::all();

@@ -9,6 +9,10 @@ use App\Role;
 
 class RolesApiController extends Controller
 {
+    public function __construct() {
+        $this->middleware('jwt.auth');
+    }
+    
     public function index()
     {
         $roles = Role::all();
