@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreUserRequest extends FormRequest
@@ -15,19 +14,25 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'     => [
+            'first_name'  => [
                 'required',
             ],
-            'email'    => [
+            'last_name'   => [
                 'required',
             ],
-            'password' => [
+            'middle_name' => [
                 'required',
             ],
-            'roles.*'  => [
+            'email'       => [
+                'required',
+            ],
+            'password'    => [
+                'required',
+            ],
+            'roles.*'     => [
                 'integer',
             ],
-            'roles'    => [
+            'roles'       => [
                 'required',
                 'array',
             ],

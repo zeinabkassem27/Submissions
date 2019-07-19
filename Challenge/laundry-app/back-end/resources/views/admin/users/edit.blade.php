@@ -10,16 +10,41 @@
         <form action="{{ route("admin.users.update", [$user->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                <label for="name">{{ trans('cruds.user.fields.name') }}*</label>
-                <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($user) ? $user->name : '') }}" required>
-                @if($errors->has('name'))
+            <div class="form-group {{ $errors->has('first_name') ? 'has-error' : '' }}">
+                <label for="first_name">{{ trans('cruds.user.fields.first_name') }}*</label>
+                <input type="text" id=first_name" name="first_name" class="form-control" value="{{ old('first_name', isset($user) ? $user->first_name : '') }}" required>
+                @if($errors->has('first_name'))
                     <em class="invalid-feedback">
-                        {{ $errors->first('name') }}
+                        {{ $errors->first('first_name') }}
                     </em>
                 @endif
                 <p class="helper-block">
-                    {{ trans('cruds.user.fields.name_helper') }}
+                    {{ trans('cruds.user.fields.first_name_helper') }}
+                </p>
+            </div>
+            
+            <div class="form-group {{ $errors->has('last_name') ? 'has-error' : '' }}">
+                <label for="last_name">{{ trans('cruds.user.fields.last_name') }}*</label>
+                <input type="text" id=last_name" name="last_name" class="form-control" value="{{ old('last_name', isset($user) ? $user->last_name : '') }}" required>
+                @if($errors->has('last_name'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('last_name') }}
+                    </em>
+                @endif
+                <p class="helper-block">
+                    {{ trans('cruds.user.fields.last_name_helper') }}
+                </p>
+            </div>
+            <div class="form-group {{ $errors->has('middle_name') ? 'has-error' : '' }}">
+                <label for="middle_name">{{ trans('cruds.user.fields.middle_name') }}*</label>
+                <input type="text" id=middle_name" name="middle_name" class="form-control" value="{{ old('middle_name', isset($user) ? $user->middle_name : '') }}" required>
+                @if($errors->has('middle_name'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('middle_name') }}
+                    </em>
+                @endif
+                <p class="helper-block">
+                    {{ trans('cruds.user.fields.middle_name_helper') }}
                 </p>
             </div>
             <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">

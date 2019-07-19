@@ -28,6 +28,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('items-types/destroy', 'ItemsTypeController@massDestroy')->name('items-types.massDestroy');
 
     Route::resource('items-types', 'ItemsTypeController');
+    
+    Route::post('items-types/media', 'ItemsTypeController@storeMedia')->name('items-types.storeMedia');
 
     Route::delete('order-items/destroy', 'OrderItemsController@massDestroy')->name('order-items.massDestroy');
 

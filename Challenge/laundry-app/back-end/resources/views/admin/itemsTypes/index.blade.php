@@ -29,6 +29,9 @@
                             {{ trans('cruds.itemsType.fields.price') }}
                         </th>
                         <th>
+                              {{ trans('cruds.itemsType.fields.image') }}
+                        </th>
+                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -44,6 +47,13 @@
                             </td>
                             <td>
                                 {{ $itemsType->price ?? '' }}
+                            </td>
+                            <td>
+                                @if($itemsType->image)
+                                    <a href="{{ $itemsType->image->getUrl() }}" target="_blank">
+                                        <img src="{{ $itemsType->image->getUrl('thumb') }}" width="50px" height="50px">
+                                    </a>
+                                @endif
                             </td>
                             <td>
                                 @can('items_type_show')
@@ -113,3 +123,4 @@
 
 </script>
 @endsection
+

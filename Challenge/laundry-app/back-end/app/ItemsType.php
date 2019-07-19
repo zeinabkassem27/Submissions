@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
 
 /**
  * App\ItemsType
@@ -29,10 +32,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Query\Builder|\App\ItemsType withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\ItemsType withoutTrashed()
  * @mixin \Eloquent
+ * @property-read mixed $image
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\MediaLibrary\Models\Media[] $media
  */
-class ItemsType extends Model
-{
-    use SoftDeletes;
+class ItemsType extends Model implements HasMedia {
+    use SoftDeletes, HasMediaTrait;
 
     public $table = 'items_types';
 
@@ -49,4 +53,19 @@ class ItemsType extends Model
         'updated_at',
         'deleted_at',
     ];
+    
+    
+    public function registerMediaConversions( Media $media = null ) {
+        $this->addMediaConversion( 'thumb' )->width( 50 )->height( 50 );
+    }
+    
+    public function getImageAttribute() {
+        $file = $this->getMedia( 'image' )->last();
+        
+        if ( $file ) {
+            $file->url = $file->getUrl();
+        }
+        
+        return $file;
+    }
 }

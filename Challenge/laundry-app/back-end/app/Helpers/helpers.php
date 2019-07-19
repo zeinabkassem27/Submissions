@@ -7,4 +7,4 @@
  * File: helpers.php
  */
 
-require_once './field_types.php';
+require_once __DIR__ . '/field_types.php';

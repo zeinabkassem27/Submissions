@@ -5,12 +5,13 @@ namespace App;
 use Carbon\Carbon;
 use Hash;
 use Illuminate\Auth\Notifications\ResetPassword;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-// Please add this line
 use Tymon\JWTAuth\Contracts\JWTSubject;
+
+// Please add this line
+
 /**
  * App\User
  *
@@ -43,6 +44,12 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
  * @method static \Illuminate\Database\Query\Builder|\App\User withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\User withoutTrashed()
  * @mixin \Eloquent
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $middle_name
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereFirstName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereLastName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereMiddleName($value)
  */
 class User extends Authenticatable  implements JWTSubject
 {
@@ -63,7 +70,9 @@ class User extends Authenticatable  implements JWTSubject
     ];
 
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
+        'middle_name',
         'email',
         'password',
         'created_at',
@@ -99,7 +108,6 @@ class User extends Authenticatable  implements JWTSubject
     {
         return $this->belongsToMany(Role::class);
     }
-    
     
     // Please ADD this two methods at the end of the class
     public function getJWTIdentifier()

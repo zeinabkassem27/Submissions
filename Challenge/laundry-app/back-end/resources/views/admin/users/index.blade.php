@@ -23,7 +23,13 @@
 
                         </th>
                         <th>
-                            {{ trans('cruds.user.fields.name') }}
+                            {{ trans('cruds.user.fields.first_name') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.user.fields.last_name') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.user.fields.middle_name') }}
                         </th>
                         <th>
                             {{ trans('cruds.user.fields.email') }}
@@ -46,7 +52,13 @@
 
                             </td>
                             <td>
-                                {{ $user->name ?? '' }}
+                                {{ $user->first_name ?? '' }}
+                            </td>
+                            <td>
+                                {{ $user->last_name ?? '' }}
+                            </td>
+                            <td>
+                                {{ $user->middle_name ?? '' }}
                             </td>
                             <td>
                                 {{ $user->email ?? '' }}

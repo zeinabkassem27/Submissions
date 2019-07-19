@@ -21,6 +21,9 @@ class StoreItemsTypeRequest extends FormRequest
             'price' => [
                 'required',
             ],
+            'image' => [
+                'required',
+            ],
         ];
     }
 }

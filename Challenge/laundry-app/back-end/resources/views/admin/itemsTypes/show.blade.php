@@ -26,6 +26,18 @@
                             ${{ $itemsType->price }}
                         </td>
                     </tr>
+                     <tr>
+                        <th>
+                            {{ trans('cruds.itemsType.fields.image') }}
+                        </th>
+                        <td>
+                            @if($itemsType->image)
+                                <a href="{{ $itemsType->image->getUrl() }}" target="_blank">
+                                    <img src="{{ $itemsType->image->getUrl('thumb') }}" width="50px" height="50px">
+                                </a>
+                            @endif
+                        </td>
+                     </tr>
                 </tbody>
             </table>
             <a style="margin-top:20px;" class="btn btn-default" href="{{ url()->previous() }}">
