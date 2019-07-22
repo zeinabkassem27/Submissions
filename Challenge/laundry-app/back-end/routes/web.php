@@ -4,7 +4,7 @@ Route::redirect('/', '/login');
 
 Route::redirect('/home', '/admin');
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
@@ -56,4 +56,20 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('contacts/destroy', 'ContactsController@massDestroy')->name('contacts.massDestroy');
 
     Route::resource('contacts', 'ContactsController');
+    
+    Route::delete('services/destroy', 'ServicesController@massDestroy')->name('services.massDestroy');
+    
+    Route::resource('services', 'ServicesController');
+    
+    Route::post('services/media', 'ServicesController@storeMedia')->name('services.storeMedia');
+    
+    Route::delete('sliders/destroy', 'SlidersController@massDestroy')->name('sliders.massDestroy');
+    
+    Route::resource('sliders', 'SlidersController');
+    
+    Route::post('sliders/media', 'SlidersController@storeMedia')->name('sliders.storeMedia');
+    
+    Route::delete('pages-with-no-repeated-fields/destroy', 'PagesWithNoRepeatedFieldsController@massDestroy')->name('pages-with-no-repeated-fields.massDestroy');
+    
+    Route::resource('pages-with-no-repeated-fields', 'PagesWithNoRepeatedFieldsController');
 });

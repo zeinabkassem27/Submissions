@@ -22,11 +22,20 @@ Route::group( [ 'prefix' => 'v1', 'as' => 'admin.', 'namespace' => 'Api\V1\Admin
     Route::apiResource( 'contacts', 'ContactsApiController' );
     
     
+    Route::apiResource( 'services', 'ServicesApiController' );
+    
+    Route::apiResource( 'sliders', 'SlidersApiController' );
+    
+    Route::apiResource( 'pages-with-no-repeated-fields', 'PagesWithNoRepeatedFieldsApiController' );
 } );
 
+Route::group(['middleware' => 'jwt.auth'], function(){
+    Route::get('logout', 'APILoginController@logout');
+    // users is a route protected by jwt
+    Route::middleware('jwt.auth')->get('users', function () {
+        return auth('api')->user();
+    });
+    Route::get('refresh', 'APILoginController@refresh')->name('api.jwt.refresh');
+});
 Route::post('login', 'APILoginController@login');
 
-// users is a route protected by jwt
-Route::middleware('jwt.auth')->get('users', function () {
-    return auth('api')->user();
-});

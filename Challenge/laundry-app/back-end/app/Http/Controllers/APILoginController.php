@@ -2,9 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+
+/**
+ * @group Authentication management
+ *
+ * APIs for managing Authentication
+ */
 class APILoginController extends Controller {
     //
     
+    /**
+     * Authentication Login
+     *
+     * @bodyParam email string requited The user email field.
+     * @bodyParam password string required The user password field.
+     *
+     */
     //Please add this method
     public function login() {
         // get email and password from request
@@ -19,8 +33,36 @@ class APILoginController extends Controller {
         return response()->json( [
             'token'   => $token,
             'type'    => 'bearer', // you can ommit this
-            'expires' => auth( 'api' )->factory()->getTTL() * 60, // time to expiration
+            'expires' => auth( 'api' )->factory()->getTTL() * 120, // time to expiration
         
         ] );
+    }
+    
+    /**
+     * Authentication Logout
+     *
+     */
+    public function logout() {
+        Auth::guard('api')->logout();
+        
+        return response()->json([
+            'status' => 'success',
+            'message' => 'logout'
+        ], 200);
+    }
+    
+    protected function respondWithToken($token) {
+        return response()->json([
+            'access_token' => $token,
+            'token_type' => 'bearer',
+            'expires_in' => Auth::guard('api')->factory()->getTTL() * 60
+        ]);
+    }
+    
+    /**
+     * Authentication Token refresh
+     */
+    public function refresh() {
+        return $this->respondWithToken(Auth::guard('api')->refresh());
     }
 }

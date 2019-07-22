@@ -22,7 +22,7 @@ class UsersApiController extends Controller
     /**
      * Fetch the list of all users
      *
-     * This api route return all the users in the database without the deleted one
+     * This api route return all the users in the database.
      *
      */
     public function index()

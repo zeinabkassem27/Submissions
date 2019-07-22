@@ -20,6 +20,143 @@ Welcome to the generated API reference.
 
 <!-- END_INFO -->
 
+#Authentication management
+
+APIs for managing Authentication
+<!-- START_00e7e21641f05de650dbe13f242c6f2c -->
+## Authentication Logout
+
+> Example request:
+
+```bash
+curl -X GET -G "/api/logout" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/logout");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": "Token not provided"
+}
+```
+
+### HTTP Request
+`GET api/logout`
+
+
+<!-- END_00e7e21641f05de650dbe13f242c6f2c -->
+
+<!-- START_b355f1b3bc7541b04143ea45e4b7ffa1 -->
+## Authentication Token refresh
+
+> Example request:
+
+```bash
+curl -X GET -G "/api/refresh" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/refresh");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": "Token not provided"
+}
+```
+
+### HTTP Request
+`GET api/refresh`
+
+
+<!-- END_b355f1b3bc7541b04143ea45e4b7ffa1 -->
+
+<!-- START_c3fa189a6c95ca36ad6ac4791a873d23 -->
+## Authentication Login
+
+> Example request:
+
+```bash
+curl -X POST "/api/login" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"email":"officiis","password":"id"}'
+
+```
+
+```javascript
+const url = new URL("/api/login");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "email": "officiis",
+    "password": "id"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/login`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    email | string |  optional  | requited The user email field.
+    password | string |  required  | The user password field.
+
+<!-- END_c3fa189a6c95ca36ad6ac4791a873d23 -->
+
 #Contact management
 
 APIs for managing contacts
@@ -78,7 +215,7 @@ The email functionality
 curl -X POST "/api/v1/contacts" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"subject":"quis","message":"velit","email":"voluptas"}'
+    -d '{"subject":"odio","message":"molestiae","email":"a"}'
 
 ```
 
@@ -92,9 +229,9 @@ let headers = {
 }
 
 let body = {
-    "subject": "quis",
-    "message": "velit",
-    "email": "voluptas"
+    "subject": "odio",
+    "message": "molestiae",
+    "email": "a"
 }
 
 fetch(url, {
@@ -178,7 +315,7 @@ For the {contact} pass the contact id
 curl -X PUT "/api/v1/contacts/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"subject":"animi","message":"ab","email":"inventore"}'
+    -d '{"subject":"necessitatibus","message":"ipsa","email":"et"}'
 
 ```
 
@@ -192,9 +329,9 @@ let headers = {
 }
 
 let body = {
-    "subject": "animi",
-    "message": "ab",
-    "email": "inventore"
+    "subject": "necessitatibus",
+    "message": "ipsa",
+    "email": "et"
 }
 
 fetch(url, {
@@ -224,7 +361,7 @@ Parameter | Type | Status | Description
 <!-- END_9aec7381d4dd89e68a9ff728678d8b21 -->
 
 <!-- START_6edc54ea34dd384c52c2ab85854ca8a2 -->
-## Partially delete a contact request inside the database
+## Completely delete a contact request inside the database
 
 This functionality is to be used in the admin panel <br/>
 For the {contact} pass the contact id
@@ -261,23 +398,23 @@ fetch(url, {
 
 <!-- END_6edc54ea34dd384c52c2ab85854ca8a2 -->
 
-#User management
+#Items type management
 
-APIs for managing users
-<!-- START_1aff981da377ba9a1bbc56ff8efaec0d -->
-## Fetch the list of all users
+APIs for managing items type
+<!-- START_323ddaaf1bb6fc0f57fbc28e70705ab6 -->
+## Fetch the list of all the available item types
 
-This api route return all the users in the database without the deleted one
+This api route return all the available item types in the database.
 
 > Example request:
 
 ```bash
-curl -X GET -G "/api/v1/users" \
+curl -X GET -G "/api/v1/items-types" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
 ```
 
 ```javascript
-const url = new URL("/api/v1/users");
+const url = new URL("/api/v1/items-types");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
@@ -303,26 +440,26 @@ fetch(url, {
 ```
 
 ### HTTP Request
-`GET api/v1/users`
+`GET api/v1/items-types`
 
 
-<!-- END_1aff981da377ba9a1bbc56ff8efaec0d -->
+<!-- END_323ddaaf1bb6fc0f57fbc28e70705ab6 -->
 
-<!-- START_4194ceb9a20b7f80b61d14d44df366b4 -->
-## Store a new user inside the database
+<!-- START_5d51c6a02f4172bc96665a23e792e5c2 -->
+## Store a new order inside the database
 
 > Example request:
 
 ```bash
-curl -X POST "/api/v1/users" \
+curl -X POST "/api/v1/items-types" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"first_name":"est","last_name":"quibusdam","middle_name":"ducimus","email":"quo","password":"eum","roles":[9]}'
+    -d '{"title":"perspiciatis","price":"autem"}'
 
 ```
 
 ```javascript
-const url = new URL("/api/v1/users");
+const url = new URL("/api/v1/items-types");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
@@ -331,14 +468,8 @@ let headers = {
 }
 
 let body = {
-    "first_name": "est",
-    "last_name": "quibusdam",
-    "middle_name": "ducimus",
-    "email": "quo",
-    "password": "eum",
-    "roles": [
-        9
-    ]
+    "title": "perspiciatis",
+    "price": "autem"
 }
 
 fetch(url, {
@@ -353,35 +484,29 @@ fetch(url, {
 
 
 ### HTTP Request
-`POST api/v1/users`
+`POST api/v1/items-types`
 
 #### Body Parameters
 
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    first_name | string |  required  | The first name of the registered user.
-    last_name | string |  required  | The last name of the registered user.
-    middle_name | string |  required  | The middle name of the registered user.
-    email | string |  required  | The email of the registered user.
-    password | string |  required  | The password of the registered user.
-    roles | array |  required  | The set of roles of the registered user, it accepts 1 to many roles.
-    roles.* | integer |  required  | The role id of the registered user.
+    title | string |  required  | The item type title.
+    price | money |  required  | The item type title, number format should be with no more than 2 leading number after the decimal, 12.22 222,22.
 
-<!-- END_4194ceb9a20b7f80b61d14d44df366b4 -->
+<!-- END_5d51c6a02f4172bc96665a23e792e5c2 -->
 
-<!-- START_cedc85e856362e0e3b46f5dcd9f8f5d0 -->
-## List the details of 1 user by user id &lt;br/&gt;
- /api/v1/users/{user} where user is an integer
+<!-- START_7f5477ca19e3164647bccc1d1d38c139 -->
+## List the details of 1 item type&lt;br/&gt;
 
 > Example request:
 
 ```bash
-curl -X GET -G "/api/v1/users/2" \
+curl -X GET -G "/api/v1/items-types/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
 ```
 
 ```javascript
-const url = new URL("/api/v1/users/2");
+const url = new URL("/api/v1/items-types/1");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
@@ -398,35 +523,35 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (404):
 
 ```json
 {
-    "error": "Token not provided"
+    "message": "No query results for model [App\\ItemsType] 1"
 }
 ```
 
 ### HTTP Request
-`GET api/v1/users/{user}`
+`GET api/v1/items-types/{items_type}`
 
 
-<!-- END_cedc85e856362e0e3b46f5dcd9f8f5d0 -->
+<!-- END_7f5477ca19e3164647bccc1d1d38c139 -->
 
-<!-- START_296fac4bf818c99f6dd42a4a0eb56b58 -->
-## Update an existing user inside the database
+<!-- START_4106c27b20bac006382e473a83c750f6 -->
+## Update am existing item type inside the database
 
 > Example request:
 
 ```bash
-curl -X PUT "/api/v1/users/2" \
+curl -X PUT "/api/v1/items-types/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"first_name":"est","last_name":"vel","middle_name":"animi","email":"sunt","password":"dicta","roles":[12]}'
+    -d '{"title":"rerum","price":"alias"}'
 
 ```
 
 ```javascript
-const url = new URL("/api/v1/users/2");
+const url = new URL("/api/v1/items-types/1");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
@@ -435,14 +560,8 @@ let headers = {
 }
 
 let body = {
-    "first_name": "est",
-    "last_name": "vel",
-    "middle_name": "animi",
-    "email": "sunt",
-    "password": "dicta",
-    "roles": [
-        12
-    ]
+    "title": "rerum",
+    "price": "alias"
 }
 
 fetch(url, {
@@ -457,37 +576,31 @@ fetch(url, {
 
 
 ### HTTP Request
-`PUT api/v1/users/{user}`
+`PUT api/v1/items-types/{items_type}`
 
-`PATCH api/v1/users/{user}`
+`PATCH api/v1/items-types/{items_type}`
 
 #### Body Parameters
 
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    first_name | string |  required  | The first name of the registered user.
-    last_name | string |  required  | The last name of the registered user.
-    middle_name | string |  required  | The middle name of the registered user.
-    email | string |  required  | The email of the registered user.
-    password | string |  required  | The password of the registered user.
-    roles | array |  required  | The set of roles of the registered user, it accepts 1 to many roles.
-    roles.* | integer |  required  | The role id of the registered user.
+    title | string |  required  | The item type title.
+    price | money |  required  | The item type title, number format should be with no more than 2 leading number after the decimal, 12.22 222,22.
 
-<!-- END_296fac4bf818c99f6dd42a4a0eb56b58 -->
+<!-- END_4106c27b20bac006382e473a83c750f6 -->
 
-<!-- START_22354fc95c42d81a744eece68f5b9b9a -->
-## Completely delete user by providing 1 user id per time
- /api/v1/users/{user} where user is an integer
+<!-- START_a7cd3ab712d2ef327aedf01078ae74b0 -->
+## Completely delete an item type by providing the item type id
 
 > Example request:
 
 ```bash
-curl -X DELETE "/api/v1/users/2" \
+curl -X DELETE "/api/v1/items-types/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
 ```
 
 ```javascript
-const url = new URL("/api/v1/users/2");
+const url = new URL("/api/v1/items-types/1");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
@@ -506,12 +619,753 @@ fetch(url, {
 
 
 ### HTTP Request
-`DELETE api/v1/users/{user}`
+`DELETE api/v1/items-types/{items_type}`
 
 
-<!-- END_22354fc95c42d81a744eece68f5b9b9a -->
+<!-- END_a7cd3ab712d2ef327aedf01078ae74b0 -->
 
-#general
+#Order Items management
+
+APIs for managing order items
+<!-- START_0514ba5d9dea73595bef9063895476ba -->
+## Fetch the list of all orders items
+
+This api route return all the orders in the database.
+
+> Example request:
+
+```bash
+curl -X GET -G "/api/v1/order-items" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/v1/order-items");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": "Token not provided"
+}
+```
+
+### HTTP Request
+`GET api/v1/order-items`
+
+
+<!-- END_0514ba5d9dea73595bef9063895476ba -->
+
+<!-- START_d288b2186b153f60b446973521c976cf -->
+## Store a new order item inside the database
+
+> Example request:
+
+```bash
+curl -X POST "/api/v1/order-items" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"order_id":8,"item_type_id":16,"status":"aut","details":"eum"}'
+
+```
+
+```javascript
+const url = new URL("/api/v1/order-items");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "order_id": 8,
+    "item_type_id": 16,
+    "status": "aut",
+    "details": "eum"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/v1/order-items`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    order_id | integer |  required  | The order Id, it should be a valid order id.
+    item_type_id | integer |  required  | The Item type Id, it should be a valid item_type id.
+    status | string |  optional  | The order item status, should be one of the following pending, processing, done.
+    details | string |  optional  | The order item details.
+
+<!-- END_d288b2186b153f60b446973521c976cf -->
+
+<!-- START_6686a023ef6872dedd1749beb4a00d7a -->
+## List the details of 1 order item by Order item id &lt;br/&gt;
+ /api/v1/order-items/{order_item} where order_item is an integer
+
+> Example request:
+
+```bash
+curl -X GET -G "/api/v1/order-items/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/v1/order-items/1");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (404):
+
+```json
+{
+    "message": "No query results for model [App\\OrderItem] 1"
+}
+```
+
+### HTTP Request
+`GET api/v1/order-items/{order_item}`
+
+
+<!-- END_6686a023ef6872dedd1749beb4a00d7a -->
+
+<!-- START_2fd9845df376b08d8d108f563c8709c0 -->
+## Modify an existing order item inside the database
+
+> Example request:
+
+```bash
+curl -X PUT "/api/v1/order-items/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"order_id":18,"item_type_id":3,"status":"modi","details":"ipsa"}'
+
+```
+
+```javascript
+const url = new URL("/api/v1/order-items/1");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "order_id": 18,
+    "item_type_id": 3,
+    "status": "modi",
+    "details": "ipsa"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/v1/order-items/{order_item}`
+
+`PATCH api/v1/order-items/{order_item}`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    order_id | integer |  required  | The order Id, it should be a valid order id.
+    item_type_id | integer |  required  | The Item type Id, it should be a valid item_type id.
+    status | string |  optional  | The order item status, should be one of the following pending, processing, done.
+    details | string |  optional  | The order item details.
+
+<!-- END_2fd9845df376b08d8d108f563c8709c0 -->
+
+<!-- START_9981e7b68fd4e46d4bcd9670af7ad668 -->
+## Completely delete an order item by providing the order_item id
+ /api/v1/order-items/{order_item} where order_item is an integer
+
+> Example request:
+
+```bash
+curl -X DELETE "/api/v1/order-items/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/v1/order-items/1");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/v1/order-items/{order_item}`
+
+
+<!-- END_9981e7b68fd4e46d4bcd9670af7ad668 -->
+
+#Orders management
+
+APIs for managing orders
+<!-- START_25bf4092f5e200124a149897733aac34 -->
+## Fetch the list of all orders
+
+This api route return all the orders in the database.
+
+> Example request:
+
+```bash
+curl -X GET -G "/api/v1/orders" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/v1/orders");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": "Token not provided"
+}
+```
+
+### HTTP Request
+`GET api/v1/orders`
+
+
+<!-- END_25bf4092f5e200124a149897733aac34 -->
+
+<!-- START_c79cb2035f69ac8078c2cec9fc2fab4a -->
+## Store a new order inside the database
+
+> Example request:
+
+```bash
+curl -X POST "/api/v1/orders" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"customer_id":4,"details":"aut","priority":true,"order_status":"ex"}'
+
+```
+
+```javascript
+const url = new URL("/api/v1/orders");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "customer_id": 4,
+    "details": "aut",
+    "priority": true,
+    "order_status": "ex"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/v1/orders`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    customer_id | integer |  required  | The customer Id, it should be a customer id.
+    details | string |  optional  | The order details.
+    priority | boolean |  optional  | The order priority, true to indicate that the order has a priority.
+    order_status | string |  optional  | The order status, should be one of the following pending, processing, done.
+
+<!-- END_c79cb2035f69ac8078c2cec9fc2fab4a -->
+
+<!-- START_b4bbc4b1b4c4ddc2effe9e5e2475dd8d -->
+## List the details of 1 order by Order id &lt;br/&gt;
+ /api/v1/orders/{order} where order is an integer
+
+> Example request:
+
+```bash
+curl -X GET -G "/api/v1/orders/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/v1/orders/1");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (404):
+
+```json
+{
+    "message": "No query results for model [App\\Order] 1"
+}
+```
+
+### HTTP Request
+`GET api/v1/orders/{order}`
+
+
+<!-- END_b4bbc4b1b4c4ddc2effe9e5e2475dd8d -->
+
+<!-- START_2e6d997181b1c50b2b94eaa14b66f016 -->
+## Update am existing order inside the database
+
+> Example request:
+
+```bash
+curl -X PUT "/api/v1/orders/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"customer_id":14,"details":"nam","priority":true,"order_status":"placeat"}'
+
+```
+
+```javascript
+const url = new URL("/api/v1/orders/1");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "customer_id": 14,
+    "details": "nam",
+    "priority": true,
+    "order_status": "placeat"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/v1/orders/{order}`
+
+`PATCH api/v1/orders/{order}`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    customer_id | integer |  required  | The customer Id, it should be an order id.
+    details | string |  optional  | The order details.
+    priority | boolean |  optional  | The order priority, true to indicate that the order has a priority.
+    order_status | string |  optional  | The order status, should be one of the following pending, processing, done.
+
+<!-- END_2e6d997181b1c50b2b94eaa14b66f016 -->
+
+<!-- START_f34ad9d71f18dd67576cc6db60268192 -->
+## Completely delete an order by providing the order id
+ /api/v1/orders/{order} where order is an integer
+
+> Example request:
+
+```bash
+curl -X DELETE "/api/v1/orders/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/v1/orders/1");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/v1/orders/{order}`
+
+
+<!-- END_f34ad9d71f18dd67576cc6db60268192 -->
+
+#Pages with no Repeated field management
+
+APIs for managing Page with no Repeated fields
+<!-- START_f8cedb132fa534bf5fac7d0f950f6d30 -->
+## Fetch the list of all pages with no Repeated fields
+
+This api route return all the pages with no repeated fields in the database.
+
+> Example request:
+
+```bash
+curl -X GET -G "/api/v1/pages-with-no-repeated-fields" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/v1/pages-with-no-repeated-fields");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+[
+    {
+        "id": 1,
+        "history": "",
+        "short_history": "",
+        "about_title": "",
+        "about_subtitle": "",
+        "footer_description": "",
+        "social_media_facebook": "",
+        "social_media_twitter": "",
+        "social_media_instagram": "",
+        "social_media_youtube": "",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    }
+]
+```
+
+### HTTP Request
+`GET api/v1/pages-with-no-repeated-fields`
+
+
+<!-- END_f8cedb132fa534bf5fac7d0f950f6d30 -->
+
+<!-- START_cad2dc8c7c121889e31ad8078761d375 -->
+## Store a new pages with no repeated fields inside the database
+
+> Example request:
+
+```bash
+curl -X POST "/api/v1/pages-with-no-repeated-fields" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"history":"maiores","short_history":"aut","about_title":"aut","about_subtitle":"recusandae","footer_description":"officiis","social_media_facebook":"provident","social_media_twitter":"saepe","social_media_instagram":"consequatur","social_media_youtube":"temporibus"}'
+
+```
+
+```javascript
+const url = new URL("/api/v1/pages-with-no-repeated-fields");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "history": "maiores",
+    "short_history": "aut",
+    "about_title": "aut",
+    "about_subtitle": "recusandae",
+    "footer_description": "officiis",
+    "social_media_facebook": "provident",
+    "social_media_twitter": "saepe",
+    "social_media_instagram": "consequatur",
+    "social_media_youtube": "temporibus"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/v1/pages-with-no-repeated-fields`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    history | string |  optional  | The history field.
+    short_history | string |  optional  | The short history field.
+    about_title | string |  optional  | The about title field.
+    about_subtitle | string |  optional  | The about sub-title field.
+    footer_description | string |  optional  | The footer description field.
+    social_media_facebook | string |  optional  | The facebook link field.
+    social_media_twitter | string |  optional  | The twitter link field.
+    social_media_instagram | string |  optional  | The instagram link field.
+    social_media_youtube | string |  optional  | The youtube link field.
+
+<!-- END_cad2dc8c7c121889e31ad8078761d375 -->
+
+<!-- START_f770f9b2565454c502fcdf100b4022ef -->
+## List the details of 1 pages with no repeated fields by providing the page id &lt;br/&gt;
+
+> Example request:
+
+```bash
+curl -X GET -G "/api/v1/pages-with-no-repeated-fields/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/v1/pages-with-no-repeated-fields/1");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+[]
+```
+
+### HTTP Request
+`GET api/v1/pages-with-no-repeated-fields/{pages_with_no_repeated_field}`
+
+
+<!-- END_f770f9b2565454c502fcdf100b4022ef -->
+
+<!-- START_01e9dcae245d8f1321dcce3955fb2b08 -->
+## Update an existing pages with no repeated fields inside the database
+
+> Example request:
+
+```bash
+curl -X PUT "/api/v1/pages-with-no-repeated-fields/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"history":"saepe","short_history":"aut","about_title":"eligendi","about_subtitle":"nisi","footer_description":"rem","social_media_facebook":"est","social_media_twitter":"illum","social_media_instagram":"voluptatum","social_media_youtube":"aperiam"}'
+
+```
+
+```javascript
+const url = new URL("/api/v1/pages-with-no-repeated-fields/1");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "history": "saepe",
+    "short_history": "aut",
+    "about_title": "eligendi",
+    "about_subtitle": "nisi",
+    "footer_description": "rem",
+    "social_media_facebook": "est",
+    "social_media_twitter": "illum",
+    "social_media_instagram": "voluptatum",
+    "social_media_youtube": "aperiam"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/v1/pages-with-no-repeated-fields/{pages_with_no_repeated_field}`
+
+`PATCH api/v1/pages-with-no-repeated-fields/{pages_with_no_repeated_field}`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    history | string |  optional  | The history field.
+    short_history | string |  optional  | The short history field.
+    about_title | string |  optional  | The about title field.
+    about_subtitle | string |  optional  | The about sub-title field.
+    footer_description | string |  optional  | The footer description field.
+    social_media_facebook | string |  optional  | The facebook link field.
+    social_media_twitter | string |  optional  | The twitter link field.
+    social_media_instagram | string |  optional  | The instagram link field.
+    social_media_youtube | string |  optional  | The youtube link field.
+
+<!-- END_01e9dcae245d8f1321dcce3955fb2b08 -->
+
+<!-- START_b94c9719b484181b7cd01c719be4446e -->
+## Completely delete pages with no repeated fields by providing 1 page id per time
+ /api/v1/services/{service} where service is an integer
+
+> Example request:
+
+```bash
+curl -X DELETE "/api/v1/pages-with-no-repeated-fields/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/v1/pages-with-no-repeated-fields/1");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/v1/pages-with-no-repeated-fields/{pages_with_no_repeated_field}`
+
+
+<!-- END_b94c9719b484181b7cd01c719be4446e -->
+
+#Permission management
+
+APIs for managing permission
 <!-- START_bd2777b2132db6c9cf93e928b5b5e44d -->
 ## api/v1/permissions
 > Example request:
@@ -698,8 +1552,14 @@ fetch(url, {
 
 <!-- END_a76ff06df82f5e7b38639608624548fe -->
 
+#Role management
+
+APIs for managing user roles
 <!-- START_d2f16357cb4ed36dbb0e9529ea4a460c -->
-## api/v1/roles
+## Fetch the list of all roles
+
+This api route return all the roles in the database.
+
 > Example request:
 
 ```bash
@@ -740,12 +1600,16 @@ fetch(url, {
 <!-- END_d2f16357cb4ed36dbb0e9529ea4a460c -->
 
 <!-- START_5f753b2bffb6b34b6136ddfe1be7bcce -->
-## api/v1/roles
+## Store a new role inside the database
+
 > Example request:
 
 ```bash
 curl -X POST "/api/v1/roles" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"title":"quibusdam","permissions":[15]}'
+
 ```
 
 ```javascript
@@ -753,13 +1617,21 @@ const url = new URL("/api/v1/roles");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
-    "Accept": "application/json",
     "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "title": "quibusdam",
+    "permissions": [
+        15
+    ]
 }
 
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
@@ -770,11 +1642,20 @@ fetch(url, {
 ### HTTP Request
 `POST api/v1/roles`
 
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    title | string |  required  | The new role title.
+    permissions | array |  required  | The set of permission id's.
+    permissions.* | integer |  optional  | The permission id.
 
 <!-- END_5f753b2bffb6b34b6136ddfe1be7bcce -->
 
 <!-- START_ba05db58d706b9f94944b1ab79e1e4a2 -->
-## api/v1/roles/{role}
+## List the details of 1 role by role id &lt;br/&gt;
+ /api/v1/roles/{role} where role is an integer
+
 > Example request:
 
 ```bash
@@ -815,12 +1696,16 @@ fetch(url, {
 <!-- END_ba05db58d706b9f94944b1ab79e1e4a2 -->
 
 <!-- START_81ac9047f8db2b92092c5a7f13e5d28d -->
-## api/v1/roles/{role}
+## Update an existing role inside the database
+
 > Example request:
 
 ```bash
 curl -X PUT "/api/v1/roles/1" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"title":"vitae","permissions":[9]}'
+
 ```
 
 ```javascript
@@ -828,13 +1713,21 @@ const url = new URL("/api/v1/roles/1");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
-    "Accept": "application/json",
     "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "title": "vitae",
+    "permissions": [
+        9
+    ]
 }
 
 fetch(url, {
     method: "PUT",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
@@ -847,11 +1740,20 @@ fetch(url, {
 
 `PATCH api/v1/roles/{role}`
 
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    title | string |  required  | The new role title.
+    permissions | array |  required  | The set of permission id's.
+    permissions.* | integer |  optional  | The permission id.
 
 <!-- END_81ac9047f8db2b92092c5a7f13e5d28d -->
 
 <!-- START_04c524fc2f0ea8c793406426144b4c71 -->
-## api/v1/roles/{role}
+## Completely delete role by providing 1 role id per time
+ /api/v1/roles/{role} where role is an integer
+
 > Example request:
 
 ```bash
@@ -884,17 +1786,23 @@ fetch(url, {
 
 <!-- END_04c524fc2f0ea8c793406426144b4c71 -->
 
-<!-- START_25bf4092f5e200124a149897733aac34 -->
-## api/v1/orders
+#Service management
+
+APIs for managing services
+<!-- START_3c8c4484a110a0ade00412f7d0833d72 -->
+## Fetch the list of all services
+
+This api route return all the services in the database.
+
 > Example request:
 
 ```bash
-curl -X GET -G "/api/v1/orders" \
+curl -X GET -G "/api/v1/services" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
 ```
 
 ```javascript
-const url = new URL("/api/v1/orders");
+const url = new URL("/api/v1/services");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
@@ -914,38 +1822,47 @@ fetch(url, {
 > Example response (200):
 
 ```json
-{
-    "error": "Token not provided"
-}
+[]
 ```
 
 ### HTTP Request
-`GET api/v1/orders`
+`GET api/v1/services`
 
 
-<!-- END_25bf4092f5e200124a149897733aac34 -->
+<!-- END_3c8c4484a110a0ade00412f7d0833d72 -->
 
-<!-- START_c79cb2035f69ac8078c2cec9fc2fab4a -->
-## api/v1/orders
+<!-- START_c033867c72496b8d075badce4e3f7cfd -->
+## Store a new sliders inside the database
+
 > Example request:
 
 ```bash
-curl -X POST "/api/v1/orders" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+curl -X POST "/api/v1/services" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"title":"eum","image":"quasi","description":"voluptatem"}'
+
 ```
 
 ```javascript
-const url = new URL("/api/v1/orders");
+const url = new URL("/api/v1/services");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
-    "Accept": "application/json",
     "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "title": "eum",
+    "image": "quasi",
+    "description": "voluptatem"
 }
 
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
@@ -954,22 +1871,30 @@ fetch(url, {
 
 
 ### HTTP Request
-`POST api/v1/orders`
+`POST api/v1/services`
 
+#### Body Parameters
 
-<!-- END_c79cb2035f69ac8078c2cec9fc2fab4a -->
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    title | string |  required  | The slider title.
+    image | file |  required  | The slider image.
+    description | string |  optional  | The service description.
 
-<!-- START_b4bbc4b1b4c4ddc2effe9e5e2475dd8d -->
-## api/v1/orders/{order}
+<!-- END_c033867c72496b8d075badce4e3f7cfd -->
+
+<!-- START_ff62824d7658444958c89b023a8326f7 -->
+## List the details of 1 service by providing the service id &lt;br/&gt;
+
 > Example request:
 
 ```bash
-curl -X GET -G "/api/v1/orders/1" \
+curl -X GET -G "/api/v1/services/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
 ```
 
 ```javascript
-const url = new URL("/api/v1/orders/1");
+const url = new URL("/api/v1/services/1");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
@@ -990,37 +1915,48 @@ fetch(url, {
 
 ```json
 {
-    "message": "No query results for model [App\\Order] 1"
+    "message": "No query results for model [App\\Service] 1"
 }
 ```
 
 ### HTTP Request
-`GET api/v1/orders/{order}`
+`GET api/v1/services/{service}`
 
 
-<!-- END_b4bbc4b1b4c4ddc2effe9e5e2475dd8d -->
+<!-- END_ff62824d7658444958c89b023a8326f7 -->
 
-<!-- START_2e6d997181b1c50b2b94eaa14b66f016 -->
-## api/v1/orders/{order}
+<!-- START_d48326c80f7a952beab3182ea5ce92da -->
+## Update an existing service inside the database
+
 > Example request:
 
 ```bash
-curl -X PUT "/api/v1/orders/1" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+curl -X PUT "/api/v1/services/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"title":"et","image":"quo","description":"nesciunt"}'
+
 ```
 
 ```javascript
-const url = new URL("/api/v1/orders/1");
+const url = new URL("/api/v1/services/1");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
-    "Accept": "application/json",
     "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "title": "et",
+    "image": "quo",
+    "description": "nesciunt"
 }
 
 fetch(url, {
     method: "PUT",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
@@ -1029,24 +1965,33 @@ fetch(url, {
 
 
 ### HTTP Request
-`PUT api/v1/orders/{order}`
+`PUT api/v1/services/{service}`
 
-`PATCH api/v1/orders/{order}`
+`PATCH api/v1/services/{service}`
 
+#### Body Parameters
 
-<!-- END_2e6d997181b1c50b2b94eaa14b66f016 -->
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    title | string |  required  | The slider title.
+    image | file |  optional  | The slider image.
+    description | string |  optional  | The service description.
 
-<!-- START_f34ad9d71f18dd67576cc6db60268192 -->
-## api/v1/orders/{order}
+<!-- END_d48326c80f7a952beab3182ea5ce92da -->
+
+<!-- START_d474edd02766b598445c1c4a790d8bc4 -->
+## Completely delete service by providing 1 service id per time
+ /api/v1/services/{service} where service is an integer
+
 > Example request:
 
 ```bash
-curl -X DELETE "/api/v1/orders/1" \
+curl -X DELETE "/api/v1/services/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
 ```
 
 ```javascript
-const url = new URL("/api/v1/orders/1");
+const url = new URL("/api/v1/services/1");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
@@ -1065,22 +2010,28 @@ fetch(url, {
 
 
 ### HTTP Request
-`DELETE api/v1/orders/{order}`
+`DELETE api/v1/services/{service}`
 
 
-<!-- END_f34ad9d71f18dd67576cc6db60268192 -->
+<!-- END_d474edd02766b598445c1c4a790d8bc4 -->
 
-<!-- START_323ddaaf1bb6fc0f57fbc28e70705ab6 -->
-## api/v1/items-types
+#Slider management
+
+APIs for managing users
+<!-- START_6f5fe12417b53d8fbd4c2e8e5a210413 -->
+## Fetch the list of all sliders
+
+This api route return all the sliders in the database.
+
 > Example request:
 
 ```bash
-curl -X GET -G "/api/v1/items-types" \
+curl -X GET -G "/api/v1/sliders" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
 ```
 
 ```javascript
-const url = new URL("/api/v1/items-types");
+const url = new URL("/api/v1/sliders");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
@@ -1100,38 +2051,47 @@ fetch(url, {
 > Example response (200):
 
 ```json
-{
-    "error": "Token not provided"
-}
+[]
 ```
 
 ### HTTP Request
-`GET api/v1/items-types`
+`GET api/v1/sliders`
 
 
-<!-- END_323ddaaf1bb6fc0f57fbc28e70705ab6 -->
+<!-- END_6f5fe12417b53d8fbd4c2e8e5a210413 -->
 
-<!-- START_5d51c6a02f4172bc96665a23e792e5c2 -->
-## api/v1/items-types
+<!-- START_f5d44877d0b8c939033f596aa4188327 -->
+## Store a new sliders inside the database
+
 > Example request:
 
 ```bash
-curl -X POST "/api/v1/items-types" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+curl -X POST "/api/v1/sliders" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"title":"explicabo","image":"a","sub_title":"molestias"}'
+
 ```
 
 ```javascript
-const url = new URL("/api/v1/items-types");
+const url = new URL("/api/v1/sliders");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
-    "Accept": "application/json",
     "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "title": "explicabo",
+    "image": "a",
+    "sub_title": "molestias"
 }
 
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
@@ -1140,208 +2100,30 @@ fetch(url, {
 
 
 ### HTTP Request
-`POST api/v1/items-types`
+`POST api/v1/sliders`
 
+#### Body Parameters
 
-<!-- END_5d51c6a02f4172bc96665a23e792e5c2 -->
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    title | string |  required  | The slider title.
+    image | file |  required  | The slider image.
+    sub_title | string |  optional  | The slider subtitle.
 
-<!-- START_7f5477ca19e3164647bccc1d1d38c139 -->
-## api/v1/items-types/{items_type}
+<!-- END_f5d44877d0b8c939033f596aa4188327 -->
+
+<!-- START_3093f6c1e40a8f8073aa2d600a9bae71 -->
+## List the details of 1 slider by providing the slider id &lt;br/&gt;
+
 > Example request:
 
 ```bash
-curl -X GET -G "/api/v1/items-types/1" \
+curl -X GET -G "/api/v1/sliders/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
 ```
 
 ```javascript
-const url = new URL("/api/v1/items-types/1");
-
-let headers = {
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "error": "Token not provided"
-}
-```
-
-### HTTP Request
-`GET api/v1/items-types/{items_type}`
-
-
-<!-- END_7f5477ca19e3164647bccc1d1d38c139 -->
-
-<!-- START_4106c27b20bac006382e473a83c750f6 -->
-## api/v1/items-types/{items_type}
-> Example request:
-
-```bash
-curl -X PUT "/api/v1/items-types/1" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
-```
-
-```javascript
-const url = new URL("/api/v1/items-types/1");
-
-let headers = {
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT api/v1/items-types/{items_type}`
-
-`PATCH api/v1/items-types/{items_type}`
-
-
-<!-- END_4106c27b20bac006382e473a83c750f6 -->
-
-<!-- START_a7cd3ab712d2ef327aedf01078ae74b0 -->
-## api/v1/items-types/{items_type}
-> Example request:
-
-```bash
-curl -X DELETE "/api/v1/items-types/1" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
-```
-
-```javascript
-const url = new URL("/api/v1/items-types/1");
-
-let headers = {
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`DELETE api/v1/items-types/{items_type}`
-
-
-<!-- END_a7cd3ab712d2ef327aedf01078ae74b0 -->
-
-<!-- START_0514ba5d9dea73595bef9063895476ba -->
-## api/v1/order-items
-> Example request:
-
-```bash
-curl -X GET -G "/api/v1/order-items" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
-```
-
-```javascript
-const url = new URL("/api/v1/order-items");
-
-let headers = {
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "error": "Token not provided"
-}
-```
-
-### HTTP Request
-`GET api/v1/order-items`
-
-
-<!-- END_0514ba5d9dea73595bef9063895476ba -->
-
-<!-- START_d288b2186b153f60b446973521c976cf -->
-## api/v1/order-items
-> Example request:
-
-```bash
-curl -X POST "/api/v1/order-items" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
-```
-
-```javascript
-const url = new URL("/api/v1/order-items");
-
-let headers = {
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST api/v1/order-items`
-
-
-<!-- END_d288b2186b153f60b446973521c976cf -->
-
-<!-- START_6686a023ef6872dedd1749beb4a00d7a -->
-## api/v1/order-items/{order_item}
-> Example request:
-
-```bash
-curl -X GET -G "/api/v1/order-items/1" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
-```
-
-```javascript
-const url = new URL("/api/v1/order-items/1");
+const url = new URL("/api/v1/sliders/1");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
@@ -1362,37 +2144,48 @@ fetch(url, {
 
 ```json
 {
-    "message": "No query results for model [App\\OrderItem] 1"
+    "message": "No query results for model [App\\Slider] 1"
 }
 ```
 
 ### HTTP Request
-`GET api/v1/order-items/{order_item}`
+`GET api/v1/sliders/{slider}`
 
 
-<!-- END_6686a023ef6872dedd1749beb4a00d7a -->
+<!-- END_3093f6c1e40a8f8073aa2d600a9bae71 -->
 
-<!-- START_2fd9845df376b08d8d108f563c8709c0 -->
-## api/v1/order-items/{order_item}
+<!-- START_3a2b3df8f7515dce39d5a7a0e435fa78 -->
+## Update an existing slider inside the database
+
 > Example request:
 
 ```bash
-curl -X PUT "/api/v1/order-items/1" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+curl -X PUT "/api/v1/sliders/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"title":"atque","image":"a","sub_title":"rerum"}'
+
 ```
 
 ```javascript
-const url = new URL("/api/v1/order-items/1");
+const url = new URL("/api/v1/sliders/1");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
-    "Accept": "application/json",
     "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "title": "atque",
+    "image": "a",
+    "sub_title": "rerum"
 }
 
 fetch(url, {
     method: "PUT",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
@@ -1401,24 +2194,33 @@ fetch(url, {
 
 
 ### HTTP Request
-`PUT api/v1/order-items/{order_item}`
+`PUT api/v1/sliders/{slider}`
 
-`PATCH api/v1/order-items/{order_item}`
+`PATCH api/v1/sliders/{slider}`
 
+#### Body Parameters
 
-<!-- END_2fd9845df376b08d8d108f563c8709c0 -->
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    title | string |  required  | The slider title.
+    image | file |  optional  | The slider image.
+    sub_title | string |  optional  | The slider subtitle.
 
-<!-- START_9981e7b68fd4e46d4bcd9670af7ad668 -->
-## api/v1/order-items/{order_item}
+<!-- END_3a2b3df8f7515dce39d5a7a0e435fa78 -->
+
+<!-- START_9bac4597a6e7bf2c8ae67c21263a5185 -->
+## Completely delete slider by providing 1 slider id per time
+ /api/v1/sliders/{slider} where slider is an integer
+
 > Example request:
 
 ```bash
-curl -X DELETE "/api/v1/order-items/1" \
+curl -X DELETE "/api/v1/sliders/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
 ```
 
 ```javascript
-const url = new URL("/api/v1/order-items/1");
+const url = new URL("/api/v1/sliders/1");
 
 let headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
@@ -1437,11 +2239,262 @@ fetch(url, {
 
 
 ### HTTP Request
-`DELETE api/v1/order-items/{order_item}`
+`DELETE api/v1/sliders/{slider}`
 
 
-<!-- END_9981e7b68fd4e46d4bcd9670af7ad668 -->
+<!-- END_9bac4597a6e7bf2c8ae67c21263a5185 -->
 
+#User management
+
+APIs for managing users
+<!-- START_1aff981da377ba9a1bbc56ff8efaec0d -->
+## Fetch the list of all users
+
+This api route return all the users in the database.
+
+> Example request:
+
+```bash
+curl -X GET -G "/api/v1/users" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/v1/users");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": "Token not provided"
+}
+```
+
+### HTTP Request
+`GET api/v1/users`
+
+
+<!-- END_1aff981da377ba9a1bbc56ff8efaec0d -->
+
+<!-- START_4194ceb9a20b7f80b61d14d44df366b4 -->
+## Store a new user inside the database
+
+> Example request:
+
+```bash
+curl -X POST "/api/v1/users" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"first_name":"commodi","last_name":"dolores","middle_name":"iusto","email":"tenetur","password":"ut","roles":[15]}'
+
+```
+
+```javascript
+const url = new URL("/api/v1/users");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "first_name": "commodi",
+    "last_name": "dolores",
+    "middle_name": "iusto",
+    "email": "tenetur",
+    "password": "ut",
+    "roles": [
+        15
+    ]
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/v1/users`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    first_name | string |  required  | The first name of the registered user.
+    last_name | string |  required  | The last name of the registered user.
+    middle_name | string |  required  | The middle name of the registered user.
+    email | string |  required  | The email of the registered user.
+    password | string |  required  | The password of the registered user.
+    roles | array |  required  | The set of roles of the registered user, it accepts 1 to many roles.
+    roles.* | integer |  required  | The role id of the registered user.
+
+<!-- END_4194ceb9a20b7f80b61d14d44df366b4 -->
+
+<!-- START_cedc85e856362e0e3b46f5dcd9f8f5d0 -->
+## List the details of 1 user by user id &lt;br/&gt;
+ /api/v1/users/{user} where user is an integer
+
+> Example request:
+
+```bash
+curl -X GET -G "/api/v1/users/2" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/v1/users/2");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (404):
+
+```json
+{
+    "message": "No query results for model [App\\User] 2"
+}
+```
+
+### HTTP Request
+`GET api/v1/users/{user}`
+
+
+<!-- END_cedc85e856362e0e3b46f5dcd9f8f5d0 -->
+
+<!-- START_296fac4bf818c99f6dd42a4a0eb56b58 -->
+## Update an existing user inside the database
+
+> Example request:
+
+```bash
+curl -X PUT "/api/v1/users/2" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
+    -H "Content-Type: application/json" \
+    -d '{"first_name":"maxime","last_name":"ut","middle_name":"aperiam","email":"nam","password":"fugit","roles":[5]}'
+
+```
+
+```javascript
+const url = new URL("/api/v1/users/2");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "first_name": "maxime",
+    "last_name": "ut",
+    "middle_name": "aperiam",
+    "email": "nam",
+    "password": "fugit",
+    "roles": [
+        5
+    ]
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/v1/users/{user}`
+
+`PATCH api/v1/users/{user}`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    first_name | string |  required  | The first name of the registered user.
+    last_name | string |  required  | The last name of the registered user.
+    middle_name | string |  required  | The middle name of the registered user.
+    email | string |  required  | The email of the registered user.
+    password | string |  required  | The password of the registered user.
+    roles | array |  required  | The set of roles of the registered user, it accepts 1 to many roles.
+    roles.* | integer |  required  | The role id of the registered user.
+
+<!-- END_296fac4bf818c99f6dd42a4a0eb56b58 -->
+
+<!-- START_22354fc95c42d81a744eece68f5b9b9a -->
+## Completely delete user by providing 1 user id per time
+ /api/v1/users/{user} where user is an integer
+
+> Example request:
+
+```bash
+curl -X DELETE "/api/v1/users/2" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("/api/v1/users/2");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/v1/users/{user}`
+
+
+<!-- END_22354fc95c42d81a744eece68f5b9b9a -->
+
+#general
 <!-- START_8d91e5844d6d0d4d4bd6c81bea6a2da7 -->
 ## api/v1/content-categories
 > Example request:
@@ -1999,39 +3052,5 @@ fetch(url, {
 
 
 <!-- END_a0122b565edaf776aa8feafb62b7771d -->
-
-<!-- START_c3fa189a6c95ca36ad6ac4791a873d23 -->
-## api/login
-> Example request:
-
-```bash
-curl -X POST "/api/login" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
-```
-
-```javascript
-const url = new URL("/api/login");
-
-let headers = {
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST api/login`
-
-
-<!-- END_c3fa189a6c95ca36ad6ac4791a873d23 -->
 
 

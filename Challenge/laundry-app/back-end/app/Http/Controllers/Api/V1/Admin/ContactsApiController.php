@@ -6,6 +6,7 @@ use App\Contact;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
+
 /**
  * @group Contact management
  *
@@ -71,7 +72,7 @@ class ContactsApiController extends Controller
     }
     
     /**
-     * Partially delete a contact request inside the database
+     * Completely delete a contact request inside the database
      *
      * This functionality is to be used in the admin panel <br/>
      * For the {contact} pass the contact id

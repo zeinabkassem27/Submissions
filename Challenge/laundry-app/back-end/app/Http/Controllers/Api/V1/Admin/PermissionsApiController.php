@@ -7,6 +7,11 @@ use App\Http\Requests\StorePermissionRequest;
 use App\Http\Requests\UpdatePermissionRequest;
 use App\Permission;
 
+/**
+ * @group Permission management
+ *
+ * APIs for managing permission
+ */
 class PermissionsApiController extends Controller
 {
     public function __construct() {

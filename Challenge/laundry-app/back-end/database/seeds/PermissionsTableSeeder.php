@@ -3,16 +3,15 @@
 use App\Permission;
 use Illuminate\Database\Seeder;
 
-class PermissionsTableSeeder extends Seeder
-{
-    public function run()
-    {
-        $permissions = [[
-            'id'         => '1',
-            'title'      => 'user_management_access',
-            'created_at' => '2019-06-23 12:47:05',
-            'updated_at' => '2019-06-23 12:47:05',
-        ],
+class PermissionsTableSeeder extends Seeder {
+    public function run() {
+        $permissions = [
+            [
+                'id'         => '1',
+                'title'      => 'user_management_access',
+                'created_at' => '2019-06-23 12:47:05',
+                'updated_at' => '2019-06-23 12:47:05',
+            ],
             [
                 'id'         => '2',
                 'title'      => 'permission_create',
@@ -330,8 +329,99 @@ class PermissionsTableSeeder extends Seeder
                 'title'      => 'contact_access',
                 'created_at' => '2019-06-23 12:47:05',
                 'updated_at' => '2019-06-23 12:47:05',
-            ]];
-
-        Permission::insert($permissions);
+            ],
+            [
+                'id'         => '55',
+                'title'      => 'service_create',
+                'created_at' => '2019-07-21 22:11:55',
+                'updated_at' => '2019-07-21 22:11:55',
+            ],
+            [
+                'id'         => '56',
+                'title'      => 'service_edit',
+                'created_at' => '2019-07-21 22:11:55',
+                'updated_at' => '2019-07-21 22:11:55',
+            ],
+            [
+                'id'         => '57',
+                'title'      => 'service_show',
+                'created_at' => '2019-07-21 22:11:55',
+                'updated_at' => '2019-07-21 22:11:55',
+            ],
+            [
+                'id'         => '58',
+                'title'      => 'service_delete',
+                'created_at' => '2019-07-21 22:11:55',
+                'updated_at' => '2019-07-21 22:11:55',
+            ],
+            [
+                'id'         => '59',
+                'title'      => 'service_access',
+                'created_at' => '2019-07-21 22:11:55',
+                'updated_at' => '2019-07-21 22:11:55',
+            ],
+            [
+                'id'         => '60',
+                'title'      => 'slider_create',
+                'created_at' => '2019-07-21 22:11:55',
+                'updated_at' => '2019-07-21 22:11:55',
+            ],
+            [
+                'id'         => '61',
+                'title'      => 'slider_edit',
+                'created_at' => '2019-07-21 22:11:55',
+                'updated_at' => '2019-07-21 22:11:55',
+            ],
+            [
+                'id'         => '62',
+                'title'      => 'slider_show',
+                'created_at' => '2019-07-21 22:11:55',
+                'updated_at' => '2019-07-21 22:11:55',
+            ],
+            [
+                'id'         => '63',
+                'title'      => 'slider_delete',
+                'created_at' => '2019-07-21 22:11:55',
+                'updated_at' => '2019-07-21 22:11:55',
+            ],
+            [
+                'id'         => '64',
+                'title'      => 'slider_access',
+                'created_at' => '2019-07-21 22:11:55',
+                'updated_at' => '2019-07-21 22:11:55',
+            ],
+            [
+                'id'         => '65',
+                'title'      => 'pages_with_no_repeated_field_create',
+                'created_at' => '2019-07-21 22:31:04',
+                'updated_at' => '2019-07-21 22:31:04',
+            ],
+            [
+                'id'         => '66',
+                'title'      => 'pages_with_no_repeated_field_edit',
+                'created_at' => '2019-07-21 22:31:04',
+                'updated_at' => '2019-07-21 22:31:04',
+            ],
+            [
+                'id'         => '67',
+                'title'      => 'pages_with_no_repeated_field_show',
+                'created_at' => '2019-07-21 22:31:04',
+                'updated_at' => '2019-07-21 22:31:04',
+            ],
+            [
+                'id'         => '68',
+                'title'      => 'pages_with_no_repeated_field_delete',
+                'created_at' => '2019-07-21 22:31:04',
+                'updated_at' => '2019-07-21 22:31:04',
+            ],
+            [
+                'id'         => '69',
+                'title'      => 'pages_with_no_repeated_field_access',
+                'created_at' => '2019-07-21 22:31:04',
+                'updated_at' => '2019-07-21 22:31:04',
+            ]
+        ];
+        
+        Permission::insert( $permissions );
     }
 }

@@ -2,14 +2,15 @@
 
 namespace App\Http\Requests;
 
-use App\Order;
+use Gate;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateOrderRequest extends FormRequest
 {
     public function authorize()
     {
-        return \Gate::allows('order_edit');
+        return Gate::allows('order_edit');
     }
 
     public function rules()
@@ -19,6 +20,13 @@ class UpdateOrderRequest extends FormRequest
                 'required',
                 'integer',
             ],
+            'priority'     => [
+                'boolean',
+            ],
+            'order_status' => [
+                'string',
+                Rule::in( [ 'pending', 'processing', 'done' ] ),
+            ]
         ];
     }
 }

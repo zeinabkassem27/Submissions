@@ -7,36 +7,65 @@ use App\Http\Requests\StoreRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
 use App\Role;
 
-class RolesApiController extends Controller
-{
+/**
+ * @group Role management
+ *
+ * APIs for managing user roles
+ */
+class RolesApiController extends Controller {
     public function __construct() {
-        $this->middleware('jwt.auth');
+        $this->middleware( 'jwt.auth' );
     }
     
-    public function index()
-    {
+    /**
+     * Fetch the list of all roles
+     *
+     * This api route return all the roles in the database.
+     *
+     */
+    public function index() {
         $roles = Role::all();
-
+        
         return $roles;
     }
-
-    public function store(StoreRoleRequest $request)
-    {
-        return Role::create($request->all());
+    
+    /**
+     * Store a new role inside the database
+     *
+     * @bodyParam title string required The new role title.
+     * @bodyParam permissions array required The set of permission id's.
+     * @bodyParam permissions.* integer The permission id.
+     *
+     */
+    public function store( StoreRoleRequest $request ) {
+        return Role::create( $request->all() );
     }
-
-    public function update(UpdateRoleRequest $request, Role $role)
-    {
-        return $role->update($request->all());
+    
+    /**
+     * Update an existing role inside the database
+     *
+     * @bodyParam title string required The new role title.
+     * @bodyParam permissions array required The set of permission id's.
+     * @bodyParam permissions.* integer The permission id.
+     *
+     */
+    public function update( UpdateRoleRequest $request, Role $role ) {
+        return $role->update( $request->all() );
     }
-
-    public function show(Role $role)
-    {
+    
+    /**
+     * List the details of 1 role by role id <br/>
+     *  /api/v1/roles/{role} where role is an integer
+     */
+    public function show( Role $role ) {
         return $role;
     }
-
-    public function destroy(Role $role)
-    {
+    
+    /**
+     * Completely delete role by providing 1 role id per time
+     *  /api/v1/roles/{role} where role is an integer
+     */
+    public function destroy( Role $role ) {
         return $role->delete();
     }
 }

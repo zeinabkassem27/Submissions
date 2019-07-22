@@ -144,6 +144,36 @@
                     </a>
                 </li>
             @endcan
+            @can('service_access')
+                <li class="nav-item">
+                    <a href="{{ route("admin.services.index") }}" class="nav-link {{ request()->is('admin/services') || request()->is('admin/services/*') ? 'active' : '' }}">
+                        <i class="fa-fw fab fa-servicestack nav-icon">
+
+                        </i>
+                        {{ trans('cruds.service.title') }}
+                    </a>
+                </li>
+            @endcan
+            @can('slider_access')
+                <li class="nav-item">
+                    <a href="{{ route("admin.sliders.index") }}" class="nav-link {{ request()->is('admin/sliders') || request()->is('admin/sliders/*') ? 'active' : '' }}">
+                        <i class="fa-fw fas fa-cogs nav-icon">
+
+                        </i>
+                        {{ trans('cruds.slider.title') }}
+                    </a>
+                </li>
+            @endcan
+            @can('pages_with_no_repeated_field_access')
+                <li class="nav-item">
+                    <a href="{{ route("admin.pages-with-no-repeated-fields.index") }}" class="nav-link {{ request()->is('admin/pages-with-no-repeated-fields') || request()->is('admin/pages-with-no-repeated-fields/*') ? 'active' : '' }}">
+                        <i class="fa-fw fab fa-pagelines nav-icon">
+
+                        </i>
+                        {{ trans('cruds.pagesWithNoRepeatedField.title') }}
+                    </a>
+                </li>
+            @endcan
             <li class="nav-item">
                 <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                     <i class="nav-icon fas fa-fw fa-sign-out-alt">

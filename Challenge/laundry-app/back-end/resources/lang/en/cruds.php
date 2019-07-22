@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'userManagement'    => [
+    'userManagement'           => [
         'title'          => 'User management',
         'title_singular' => 'User management',
     ],
-    'permission'        => [
+    'permission'               => [
         'title'          => 'Permissions',
         'title_singular' => 'Permission',
         'fields'         => [
@@ -21,7 +21,7 @@ return [
             'deleted_at_helper' => '',
         ],
     ],
-    'role'              => [
+    'role'                     => [
         'title'          => 'Roles',
         'title_singular' => 'Role',
         'fields'         => [
@@ -39,7 +39,7 @@ return [
             'deleted_at_helper'  => '',
         ],
     ],
-    'user'              => [
+    'user'                     => [
         'title'          => 'Users',
         'title_singular' => 'User',
         'fields'         => [
@@ -69,7 +69,7 @@ return [
             'deleted_at_helper'        => '',
         ],
     ],
-    'order'             => [
+    'order'                    => [
         'title'          => 'Orders',
         'title_singular' => 'Order',
         'fields'         => [
@@ -91,7 +91,7 @@ return [
             'deleted_at_helper'   => '',
         ],
     ],
-    'itemsType'         => [
+    'itemsType'                => [
         'title'          => 'Items Type',
         'title_singular' => 'Items Type',
         'fields'         => [
@@ -111,7 +111,7 @@ return [
             'deleted_at_helper' => '',
         ],
     ],
-    'orderItem'         => [
+    'orderItem'                => [
         'title'          => 'Order Items',
         'title_singular' => 'Order Item',
         'fields'         => [
@@ -133,7 +133,7 @@ return [
             'deleted_at_helper' => '',
         ],
     ],
-    'auditLog'          => [
+    'auditLog'                 => [
         'title'          => 'Audit Logs',
         'title_singular' => 'Audit Log',
         'fields'         => [
@@ -157,11 +157,11 @@ return [
             'updated_at_helper'   => '',
         ],
     ],
-    'contentManagement' => [
+    'contentManagement'        => [
         'title'          => 'Content management',
         'title_singular' => 'Content management',
     ],
-    'contentCategory'   => [
+    'contentCategory'          => [
         'title'          => 'Categories',
         'title_singular' => 'Category',
         'fields'         => [
@@ -179,7 +179,7 @@ return [
             'deleted_at_helper' => '',
         ],
     ],
-    'contentTag'        => [
+    'contentTag'               => [
         'title'          => 'Tags',
         'title_singular' => 'Tag',
         'fields'         => [
@@ -197,7 +197,7 @@ return [
             'deleted_at_helper' => '',
         ],
     ],
-    'contentPage'       => [
+    'contentPage'              => [
         'title'          => 'Pages',
         'title_singular' => 'Page',
         'fields'         => [
@@ -223,7 +223,7 @@ return [
             'deleted_at_helper'     => '',
         ],
     ],
-    'contact'           => [
+    'contact'                  => [
         'title'          => 'Contacts',
         'title_singular' => 'Contact',
         'fields'         => [
@@ -241,6 +241,78 @@ return [
             'updated_at_helper' => '',
             'deleted_at'        => 'Deleted at',
             'deleted_at_helper' => '',
+        ],
+    ],
+    'service'                  => [
+        'title'          => 'Services',
+        'title_singular' => 'Service',
+        'fields'         => [
+            'id'                 => 'ID',
+            'id_helper'          => '',
+            'title'              => 'Title',
+            'title_helper'       => '',
+            'image'              => 'Image',
+            'image_helper'       => '',
+            'description'        => 'Description',
+            'description_helper' => '',
+            'created_at'         => 'Created at',
+            'created_at_helper'  => '',
+            'updated_at'         => 'Updated at',
+            'updated_at_helper'  => '',
+            'deleted_at'         => 'Deleted at',
+            'deleted_at_helper'  => '',
+        ],
+    ],
+    'slider'                   => [
+        'title'          => 'Sliders',
+        'title_singular' => 'Slider',
+        'fields'         => [
+            'id'                => 'ID',
+            'id_helper'         => '',
+            'title'             => 'Title',
+            'title_helper'      => '',
+            'sub_title'         => 'Sub Title',
+            'sub_title_helper'  => '',
+            'image'             => 'Image',
+            'image_helper'      => '',
+            'created_at'        => 'Created at',
+            'created_at_helper' => '',
+            'updated_at'        => 'Updated at',
+            'updated_at_helper' => '',
+            'deleted_at'        => 'Deleted at',
+            'deleted_at_helper' => '',
+        ],
+    ],
+    'pagesWithNoRepeatedField' => [
+        'title'          => 'Pages With No Repeated Fields',
+        'title_singular' => 'Pages With No Repeated Field',
+        'fields'         => [
+            'id'                            => 'ID',
+            'id_helper'                     => '',
+            'history'                       => 'History',
+            'history_helper'                => '',
+            'short_history'                 => 'Short History',
+            'short_history_helper'          => '',
+            'about_title'                   => 'About Title',
+            'about_title_helper'            => '',
+            'about_subtitle'                => 'About Subtitle',
+            'about_subtitle_helper'         => '',
+            'footer_description'            => 'Footer Description',
+            'footer_description_helper'     => '',
+            'social_media_facebook'         => 'Social Media Facebook',
+            'social_media_facebook_helper'  => '',
+            'social_media_twitter'          => 'Social Media Twitter',
+            'social_media_twitter_helper'   => '',
+            'social_media_instagram'        => 'Social Media Instagram',
+            'social_media_instagram_helper' => '',
+            'social_media_youtube'          => 'Social Media Youtube',
+            'social_media_youtube_helper'   => '',
+            'created_at'                    => 'Created at',
+            'created_at_helper'             => '',
+            'updated_at'                    => 'Updated at',
+            'updated_at_helper'             => '',
+            'deleted_at'                    => 'Deleted at',
+            'deleted_at_helper'             => '',
         ],
     ],
 ];

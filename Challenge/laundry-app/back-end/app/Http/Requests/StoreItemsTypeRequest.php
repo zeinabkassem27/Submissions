@@ -2,14 +2,14 @@
 
 namespace App\Http\Requests;
 
-use App\ItemsType;
+use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreItemsTypeRequest extends FormRequest
 {
     public function authorize()
     {
-        return \Gate::allows('items_type_create');
+        return Gate::allows('items_type_create');
     }
 
     public function rules()
@@ -20,6 +20,7 @@ class StoreItemsTypeRequest extends FormRequest
             ],
             'price' => [
                 'required',
+                'regex:/^\d+(\.\d{1,2})?$/'
             ],
             'image' => [
                 'required',
