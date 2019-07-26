@@ -3,9 +3,12 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Tymon\JWTAuth\Exceptions\TokenBlacklistedException;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
@@ -51,6 +54,7 @@ class Handler extends ExceptionHandler {
      * @return Response
      */
     public function render( $request, Exception $exception ) {
+    
         // PLEASE ADD THIS LINES
         if ( $exception instanceof UnauthorizedHttpException ) {
             $preException = $exception->getPrevious();
@@ -65,7 +69,16 @@ class Handler extends ExceptionHandler {
         if ( $exception->getMessage() === 'Token not provided' ) {
             return response()->json( [ 'error' => 'Token not provided' ] );
         }
-        
+        if ( $exception instanceof AuthorizationException ) {
+            return response()->json( [ 'error' => $exception->getMessage() ], 403 );
+        }
+        if (($request->isMethod('put') && $exception instanceof MethodNotAllowedHttpException) || ($request->isMethod('put') && $exception instanceof NotFoundHttpException)) {
+            return response()->json([
+                'message' => 'API Not Found',
+                'status' => false
+            ], 500
+            );
+        }
         return parent::render( $request, $exception );
     }
 }

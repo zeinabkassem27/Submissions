@@ -12,24 +12,24 @@ use App\Http\Requests\UpdateContactRequest;
  *
  * APIs for managing contacts
  */
-class ContactsApiController extends Controller
-{
+class ContactsApiController extends Controller {
     
     public function __construct() {
         $this->middleware( 'jwt.auth' )->except( [ 'store' ] );
     }
+    
     /**
      * Fetch the list of all contacts
      *
      * This api route return all the contacts in the database without the deleted one
      *
      */
-    public function index()
-    {
+    public function index() {
         $contacts = Contact::all();
-
+        
         return $contacts;
     }
+    
     /**
      * Store a contact request inside the database and send email to the administrators
      *
@@ -37,11 +37,14 @@ class ContactsApiController extends Controller
      *
      * @bodyParam subject string required The subject of the contact form.
      * @bodyParam message string required The message of the contact form.
-     * @bodyParam email required string The user email who submitted the contact form
+     * @bodyParam email string required The user email.
+     * @bodyParam name string The user name.
+     * @bodyParam address string The user address
+     * @bodyParam phone_number string The user phone number
+     *
      */
-    public function store(StoreContactRequest $request)
-    {
-        return Contact::create($request->all());
+    public function store( StoreContactRequest $request ) {
+        return Contact::create( $request->all() );
     }
     
     /**
@@ -53,10 +56,13 @@ class ContactsApiController extends Controller
      * @bodyParam subject string required The subject of the contact form.
      * @bodyParam message string required The message of the contact form.
      * @bodyParam email required string The user email who submitted the contact form
+     * @bodyParam name string The user name.
+     * @bodyParam address string The user address
+     * @bodyParam phone_number string The user phone number
      */
-    public function update(UpdateContactRequest $request, Contact $contact)
-    {
-        return $contact->update($request->all());
+    public function update( UpdateContactRequest $request, Contact $contact ) {
+        dd(2);
+        return $contact->update( $request->all() );
     }
     
     /**
@@ -66,8 +72,7 @@ class ContactsApiController extends Controller
      * For the {contact} pass the contact id
      *
      */
-    public function show(Contact $contact)
-    {
+    public function show( Contact $contact ) {
         return $contact;
     }
     
@@ -78,8 +83,7 @@ class ContactsApiController extends Controller
      * For the {contact} pass the contact id
      *
      */
-    public function destroy(Contact $contact)
-    {
+    public function destroy( Contact $contact ) {
         return $contact->delete();
     }
 }

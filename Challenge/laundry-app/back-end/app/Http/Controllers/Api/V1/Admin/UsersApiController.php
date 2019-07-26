@@ -27,9 +27,9 @@ class UsersApiController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-
-        return $users;
+        $users = User::with( 'roles' )->get();
+    
+        return apiResponse( $users );
     }
     
     /**
@@ -46,7 +46,9 @@ class UsersApiController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        return User::create($request->all());
+        $user = User::create( $request->all() );
+    
+        return apiResponse( $user );
     }
     
     /**
@@ -63,9 +65,8 @@ class UsersApiController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        return $user->update($request->all());
+        return apiResponse( $user->update( $request->all() ) );
     }
-    
     
     /**
      * List the details of 1 user by user id <br/>
@@ -73,15 +74,30 @@ class UsersApiController extends Controller
      */
     public function show(User $user)
     {
-        return $user;
+        return apiResponse( $user );
     }
     
     /**
      * Completely delete user by providing 1 user id per time
      *  /api/v1/users/{user} where user is an integer
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        return $user->delete();
+        
+        $user = User::find($id);
+        
+        if($user === null){
+            return apiResponse(null, false);
+        }else {
+        
+        }
+        dd($users);
+        return $users;
+//
+//        if(count($users) > 0)
+//
+//        return apiResponse( [
+//            'id'=> $users->id
+//        ], $users->delete() );
     }
 }

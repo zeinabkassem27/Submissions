@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\User;
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\APIFormRequest as APIFormRequest;
 
-class UpdateUserRequest extends FormRequest
+class UpdateUserRequest extends APIFormRequest
 {
     public function authorize()
     {
@@ -26,6 +25,7 @@ class UpdateUserRequest extends FormRequest
             ],
             'email'   => [
                 'required',
+                'email'
             ],
             'roles.*' => [
                 'integer',

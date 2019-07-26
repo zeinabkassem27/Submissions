@@ -27,6 +27,11 @@ Route::group( [ 'prefix' => 'v1', 'as' => 'admin.', 'namespace' => 'Api\V1\Admin
     Route::apiResource( 'sliders', 'SlidersApiController' );
     
     Route::apiResource( 'pages-with-no-repeated-fields', 'PagesWithNoRepeatedFieldsApiController' );
+    
+    Route::fallback(function(){
+        return response()->json([
+            'message' => 'Page Not Found. If error persists, contact info@website.com'], 404);
+    });
 } );
 
 Route::group(['middleware' => 'jwt.auth'], function(){

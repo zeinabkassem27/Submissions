@@ -2,8 +2,11 @@
 
 namespace App\Http\Requests;
 
-use App\Contact;
+use App\User;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateContactRequest extends FormRequest
 {
@@ -15,15 +18,37 @@ class UpdateContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'subject' => [
+            'subject'      => [
                 'required',
             ],
-            'message' => [
+            'message'      => [
                 'required',
             ],
-            'email'   => [
+            'email'        => [
                 'required',
+                'email'
+            ],
+            'name'         => [
+                'nullable',
+                'string'
+            ],
+            'address'      => [
+                'nullable',
+                'string'
+            ],
+            'phone_number' => [
+                'nullable',
+                'string'
             ],
         ];
+    }
+    
+    protected function failedValidation( Validator $validator ) {
+        throw new HttpResponseException(
+            response()->json( [
+                'success'   => false,
+                'messages' => $validator->errors()->all()
+            ], 200 )
+        );
     }
 }

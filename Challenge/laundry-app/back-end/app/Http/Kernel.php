@@ -19,6 +19,8 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
+            \App\Http\Middleware\AuthGates::class,
+            \App\Http\Middleware\SetLocale::class,
         ],
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
