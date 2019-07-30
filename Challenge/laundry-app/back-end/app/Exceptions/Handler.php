@@ -10,6 +10,7 @@ use Illuminate\Http\Response;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
+use Illuminate\Validation\ValidationException;
 use Tymon\JWTAuth\Exceptions\TokenBlacklistedException;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 use Tymon\JWTAuth\Exceptions\TokenInvalidException;
@@ -75,10 +76,22 @@ class Handler extends ExceptionHandler {
         if (($request->isMethod('put') && $exception instanceof MethodNotAllowedHttpException) || ($request->isMethod('put') && $exception instanceof NotFoundHttpException)) {
             return response()->json([
                 'message' => 'API Not Found',
-                'status' => false
+                'success' => false
             ], 500
             );
         }
+        
+        if($exception instanceof  ValidationException){
+            return response()->json([
+                'success'  => false,
+                'data'     => null,
+                'messages' => [
+                    $exception->getMessage()
+                ]
+            ], 200
+            );
+        }
+//        dd(get_class($exception));
         return parent::render( $request, $exception );
     }
 }

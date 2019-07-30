@@ -12,11 +12,9 @@ use App\Order;
  *
  * APIs for managing orders
  */
-
-class OrdersApiController extends Controller
-{
+class OrdersApiController extends Controller {
     public function __construct() {
-        $this->middleware('jwt.auth');
+        $this->middleware( 'jwt.auth' );
     }
     
     /**
@@ -25,11 +23,10 @@ class OrdersApiController extends Controller
      * This api route return all the orders in the database.
      *
      */
-    public function index()
-    {
+    public function index() {
         $orders = Order::all();
-
-        return $orders;
+        
+        return apiResponse( $orders );
     }
     
     /**
@@ -41,9 +38,8 @@ class OrdersApiController extends Controller
      * @bodyParam order_status string The order status, should be one of the following pending, processing, done.
      *
      */
-    public function store(StoreOrderRequest $request)
-    {
-        return Order::create($request->all());
+    public function store( StoreOrderRequest $request ) {
+        return apiResponse( Order::create( $request->all() ) );
     }
     
     /**
@@ -55,26 +51,38 @@ class OrdersApiController extends Controller
      * @bodyParam order_status string The order status, should be one of the following pending, processing, done.
      *
      */
-    public function update(UpdateOrderRequest $request, Order $order)
-    {
-        return $order->update($request->all());
+    public function update( UpdateOrderRequest $request, Order $order ) {
+        return apiResponse( $order->update( $request->all() ) );
     }
     
     /**
      * List the details of 1 order by Order id <br/>
      *  /api/v1/orders/{order} where order is an integer
      */
-    public function show(Order $order)
-    {
-        return $order;
+    public function show( $id ) {
+        $order = Order::find( $id );
+        if ( $order === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in the database'
+            ) );
+        } else {
+            return apiResponse( $order );
+        }
     }
     
     /**
      * Completely delete an order by providing the order id
      *  /api/v1/orders/{order} where order is an integer
      */
-    public function destroy(Order $order)
-    {
-        return $order->delete();
+    public function destroy( $id ) {
+        $order = Order::find( $id );
+        
+        if ( $order === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in the database'
+            ) );
+        } else {
+            return apiResponse( null, $order->delete() );
+        }
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Auth;
 
 /**
@@ -29,11 +30,14 @@ class APILoginController extends Controller {
             // if the credentials are wrong we send an unauthorized error in json format
             return response()->json( [ 'error' => 'Unauthorized' ], 401 );
         }
+        $user      = auth()->user();
+        $user_data = User::with( 'roles' )->find( $user->id );
         
         return response()->json( [
             'token'   => $token,
             'type'    => 'bearer', // you can ommit this
             'expires' => auth( 'api' )->factory()->getTTL() * 120, // time to expiration
+            'user'    => $user_data
         
         ] );
     }
@@ -46,16 +50,20 @@ class APILoginController extends Controller {
         Auth::guard('api')->logout();
         
         return response()->json([
-            'status' => 'success',
+            'status'  => 'success',
             'message' => 'logout'
         ], 200);
     }
     
     protected function respondWithToken($token) {
+        $user      = auth()->user();
+        $user_data = User::with( 'roles' )->find( $user->id );
+        
         return response()->json([
             'access_token' => $token,
-            'token_type' => 'bearer',
-            'expires_in' => Auth::guard('api')->factory()->getTTL() * 60
+            'token_type'   => 'bearer',
+            'expires_in'   => Auth::guard( 'api' )->factory()->getTTL() * 60,
+            'user'         => $user_data
         ]);
     }
     

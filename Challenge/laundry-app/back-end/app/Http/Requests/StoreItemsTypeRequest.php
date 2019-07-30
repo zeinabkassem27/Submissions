@@ -20,7 +20,7 @@ class StoreItemsTypeRequest extends FormRequest
             ],
             'price' => [
                 'required',
-                'regex:/^\d+(\.\d{1,2})?$/'
+//                'regex:/^\d+(\.\d{1,2})?$/'
             ],
             'image' => [
                 'required',

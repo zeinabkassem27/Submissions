@@ -10,7 +10,7 @@ class StoreOrderRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('order_create');
+        return true;
     }
 
     public function rules()
@@ -19,6 +19,7 @@ class StoreOrderRequest extends FormRequest
             'customer_id'  => [
                 'required',
                 'integer',
+                'exists:users,id'
             ],
             'priority'     => [
                 'boolean',

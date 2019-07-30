@@ -116,7 +116,7 @@ fetch(url, {
 curl -X POST "http://localhost:8000/api/login" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"email":"dolorem","password":"consequatur"}'
+    -d '{"email":"aut","password":"corporis"}'
 
 ```
 
@@ -130,8 +130,8 @@ let headers = {
 }
 
 let body = {
-    "email": "dolorem",
-    "password": "consequatur"
+    "email": "aut",
+    "password": "corporis"
 }
 
 fetch(url, {
@@ -215,7 +215,7 @@ The email functionality
 curl -X POST "http://localhost:8000/api/v1/contacts" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"subject":"sint","message":"earum","email":"sit","name":"minus","address":"voluptatem","phone_number":"laudantium"}'
+    -d '{"subject":"eligendi","message":"praesentium","email":"distinctio","name":"enim","address":"voluptas","phone_number":"quaerat"}'
 
 ```
 
@@ -229,12 +229,12 @@ let headers = {
 }
 
 let body = {
-    "subject": "sint",
-    "message": "earum",
-    "email": "sit",
-    "name": "minus",
-    "address": "voluptatem",
-    "phone_number": "laudantium"
+    "subject": "eligendi",
+    "message": "praesentium",
+    "email": "distinctio",
+    "name": "enim",
+    "address": "voluptas",
+    "phone_number": "quaerat"
 }
 
 fetch(url, {
@@ -321,7 +321,7 @@ For the {contact} pass the contact id
 curl -X PUT "http://localhost:8000/api/v1/contacts/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"subject":"qui","message":"possimus","email":"quia","name":"placeat","address":"nisi","phone_number":"reprehenderit"}'
+    -d '{"subject":"maiores","message":"minima","email":"libero","name":"ut","address":"alias","phone_number":"molestiae"}'
 
 ```
 
@@ -335,12 +335,12 @@ let headers = {
 }
 
 let body = {
-    "subject": "qui",
-    "message": "possimus",
-    "email": "quia",
-    "name": "placeat",
-    "address": "nisi",
-    "phone_number": "reprehenderit"
+    "subject": "maiores",
+    "message": "minima",
+    "email": "libero",
+    "name": "ut",
+    "address": "alias",
+    "phone_number": "molestiae"
 }
 
 fetch(url, {
@@ -466,7 +466,7 @@ fetch(url, {
 curl -X POST "http://localhost:8000/api/v1/items-types" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"title":"non","price":"dolor"}'
+    -d '{"title":"adipisci","price":"cumque"}'
 
 ```
 
@@ -480,8 +480,8 @@ let headers = {
 }
 
 let body = {
-    "title": "non",
-    "price": "dolor"
+    "title": "adipisci",
+    "price": "cumque"
 }
 
 fetch(url, {
@@ -535,11 +535,11 @@ fetch(url, {
 ```
 
 
-> Example response (404):
+> Example response (200):
 
 ```json
 {
-    "message": "No query results for model [App\\ItemsType] 1"
+    "error": "Token not provided"
 }
 ```
 
@@ -558,7 +558,7 @@ fetch(url, {
 curl -X PUT "http://localhost:8000/api/v1/items-types/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"title":"labore","price":"officia"}'
+    -d '{"title":"voluptatem","price":"aut"}'
 
 ```
 
@@ -572,8 +572,8 @@ let headers = {
 }
 
 let body = {
-    "title": "labore",
-    "price": "officia"
+    "title": "voluptatem",
+    "price": "aut"
 }
 
 fetch(url, {
@@ -692,7 +692,7 @@ fetch(url, {
 curl -X POST "http://localhost:8000/api/v1/order-items" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"order_id":2,"item_type_id":13,"status":"doloribus","details":"impedit"}'
+    -d '{"order_id":3,"item_type_id":5,"status":"eos","details":"delectus"}'
 
 ```
 
@@ -706,10 +706,10 @@ let headers = {
 }
 
 let body = {
-    "order_id": 2,
-    "item_type_id": 13,
-    "status": "doloribus",
-    "details": "impedit"
+    "order_id": 3,
+    "item_type_id": 5,
+    "status": "eos",
+    "details": "delectus"
 }
 
 fetch(url, {
@@ -766,11 +766,11 @@ fetch(url, {
 ```
 
 
-> Example response (404):
+> Example response (200):
 
 ```json
 {
-    "message": "No query results for model [App\\OrderItem] 1"
+    "error": "Token not provided"
 }
 ```
 
@@ -789,7 +789,7 @@ fetch(url, {
 curl -X PUT "http://localhost:8000/api/v1/order-items/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"order_id":12,"item_type_id":15,"status":"ratione","details":"libero"}'
+    -d '{"order_id":8,"item_type_id":16,"status":"similique","details":"laborum"}'
 
 ```
 
@@ -803,10 +803,10 @@ let headers = {
 }
 
 let body = {
-    "order_id": 12,
-    "item_type_id": 15,
-    "status": "ratione",
-    "details": "libero"
+    "order_id": 8,
+    "item_type_id": 16,
+    "status": "similique",
+    "details": "laborum"
 }
 
 fetch(url, {
@@ -928,7 +928,7 @@ fetch(url, {
 curl -X POST "http://localhost:8000/api/v1/orders" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"customer_id":14,"details":"corrupti","priority":false,"order_status":"temporibus"}'
+    -d '{"customer_id":16,"details":"odio","priority":true,"order_status":"explicabo"}'
 
 ```
 
@@ -942,10 +942,10 @@ let headers = {
 }
 
 let body = {
-    "customer_id": 14,
-    "details": "corrupti",
-    "priority": false,
-    "order_status": "temporibus"
+    "customer_id": 16,
+    "details": "odio",
+    "priority": true,
+    "order_status": "explicabo"
 }
 
 fetch(url, {
@@ -1002,11 +1002,11 @@ fetch(url, {
 ```
 
 
-> Example response (404):
+> Example response (200):
 
 ```json
 {
-    "message": "No query results for model [App\\Order] 1"
+    "error": "Token not provided"
 }
 ```
 
@@ -1025,7 +1025,7 @@ fetch(url, {
 curl -X PUT "http://localhost:8000/api/v1/orders/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"customer_id":17,"details":"consectetur","priority":true,"order_status":"error"}'
+    -d '{"customer_id":8,"details":"et","priority":true,"order_status":"iusto"}'
 
 ```
 
@@ -1039,10 +1039,10 @@ let headers = {
 }
 
 let body = {
-    "customer_id": 17,
-    "details": "consectetur",
+    "customer_id": 8,
+    "details": "et",
     "priority": true,
-    "order_status": "error"
+    "order_status": "iusto"
 }
 
 fetch(url, {
@@ -1178,7 +1178,7 @@ fetch(url, {
 curl -X POST "http://localhost:8000/api/v1/pages-with-no-repeated-fields" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"history":"unde","short_history":"aliquid","about_title":"dolores","about_subtitle":"qui","footer_description":"laboriosam","social_media_facebook":"sapiente","social_media_twitter":"ut","social_media_instagram":"sunt","social_media_youtube":"nisi"}'
+    -d '{"history":"unde","short_history":"sed","about_title":"placeat","about_subtitle":"dolor","footer_description":"odit","social_media_facebook":"quis","social_media_twitter":"sit","social_media_instagram":"amet","social_media_youtube":"aut"}'
 
 ```
 
@@ -1193,14 +1193,14 @@ let headers = {
 
 let body = {
     "history": "unde",
-    "short_history": "aliquid",
-    "about_title": "dolores",
-    "about_subtitle": "qui",
-    "footer_description": "laboriosam",
-    "social_media_facebook": "sapiente",
-    "social_media_twitter": "ut",
-    "social_media_instagram": "sunt",
-    "social_media_youtube": "nisi"
+    "short_history": "sed",
+    "about_title": "placeat",
+    "about_subtitle": "dolor",
+    "footer_description": "odit",
+    "social_media_facebook": "quis",
+    "social_media_twitter": "sit",
+    "social_media_instagram": "amet",
+    "social_media_youtube": "aut"
 }
 
 fetch(url, {
@@ -1282,7 +1282,7 @@ fetch(url, {
 curl -X PUT "http://localhost:8000/api/v1/pages-with-no-repeated-fields/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"history":"aliquam","short_history":"fugit","about_title":"vitae","about_subtitle":"ducimus","footer_description":"ut","social_media_facebook":"quia","social_media_twitter":"quidem","social_media_instagram":"facilis","social_media_youtube":"quasi"}'
+    -d '{"history":"aut","short_history":"est","about_title":"et","about_subtitle":"amet","footer_description":"est","social_media_facebook":"vitae","social_media_twitter":"dolore","social_media_instagram":"dolor","social_media_youtube":"molestiae"}'
 
 ```
 
@@ -1296,15 +1296,15 @@ let headers = {
 }
 
 let body = {
-    "history": "aliquam",
-    "short_history": "fugit",
-    "about_title": "vitae",
-    "about_subtitle": "ducimus",
-    "footer_description": "ut",
-    "social_media_facebook": "quia",
-    "social_media_twitter": "quidem",
-    "social_media_instagram": "facilis",
-    "social_media_youtube": "quasi"
+    "history": "aut",
+    "short_history": "est",
+    "about_title": "et",
+    "about_subtitle": "amet",
+    "footer_description": "est",
+    "social_media_facebook": "vitae",
+    "social_media_twitter": "dolore",
+    "social_media_instagram": "dolor",
+    "social_media_youtube": "molestiae"
 }
 
 fetch(url, {
@@ -1620,7 +1620,7 @@ fetch(url, {
 curl -X POST "http://localhost:8000/api/v1/roles" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"title":"sint","permissions":[10]}'
+    -d '{"title":"sit","permissions":[4]}'
 
 ```
 
@@ -1634,9 +1634,9 @@ let headers = {
 }
 
 let body = {
-    "title": "sint",
+    "title": "sit",
     "permissions": [
-        10
+        4
     ]
 }
 
@@ -1716,7 +1716,7 @@ fetch(url, {
 curl -X PUT "http://localhost:8000/api/v1/roles/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"title":"eos","permissions":[16]}'
+    -d '{"title":"qui","permissions":[1]}'
 
 ```
 
@@ -1730,9 +1730,9 @@ let headers = {
 }
 
 let body = {
-    "title": "eos",
+    "title": "qui",
     "permissions": [
-        16
+        1
     ]
 }
 
@@ -1834,7 +1834,11 @@ fetch(url, {
 > Example response (200):
 
 ```json
-[]
+{
+    "success": true,
+    "data": [],
+    "messages": []
+}
 ```
 
 ### HTTP Request
@@ -1852,7 +1856,7 @@ fetch(url, {
 curl -X POST "http://localhost:8000/api/v1/services" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"title":"ut","image":"voluptatem","description":"nostrum"}'
+    -d '{"title":"vel","image":"et","description":"accusamus"}'
 
 ```
 
@@ -1866,9 +1870,9 @@ let headers = {
 }
 
 let body = {
-    "title": "ut",
-    "image": "voluptatem",
-    "description": "nostrum"
+    "title": "vel",
+    "image": "et",
+    "description": "accusamus"
 }
 
 fetch(url, {
@@ -1923,11 +1927,15 @@ fetch(url, {
 ```
 
 
-> Example response (404):
+> Example response (200):
 
 ```json
 {
-    "message": "No query results for model [App\\Service] 1"
+    "success": false,
+    "data": null,
+    "messages": [
+        "Id not found in  the database"
+    ]
 }
 ```
 
@@ -1946,7 +1954,7 @@ fetch(url, {
 curl -X PUT "http://localhost:8000/api/v1/services/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"title":"sed","image":"reiciendis","description":"et"}'
+    -d '{"title":"nobis","image":"aliquid","description":"enim"}'
 
 ```
 
@@ -1960,9 +1968,9 @@ let headers = {
 }
 
 let body = {
-    "title": "sed",
-    "image": "reiciendis",
-    "description": "et"
+    "title": "nobis",
+    "image": "aliquid",
+    "description": "enim"
 }
 
 fetch(url, {
@@ -2063,7 +2071,11 @@ fetch(url, {
 > Example response (200):
 
 ```json
-[]
+{
+    "success": true,
+    "data": [],
+    "messages": []
+}
 ```
 
 ### HTTP Request
@@ -2081,7 +2093,7 @@ fetch(url, {
 curl -X POST "http://localhost:8000/api/v1/sliders" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"title":"repudiandae","image":"dicta","sub_title":"mollitia"}'
+    -d '{"title":"aut","image":"occaecati","sub_title":"totam"}'
 
 ```
 
@@ -2095,9 +2107,9 @@ let headers = {
 }
 
 let body = {
-    "title": "repudiandae",
-    "image": "dicta",
-    "sub_title": "mollitia"
+    "title": "aut",
+    "image": "occaecati",
+    "sub_title": "totam"
 }
 
 fetch(url, {
@@ -2152,11 +2164,15 @@ fetch(url, {
 ```
 
 
-> Example response (404):
+> Example response (200):
 
 ```json
 {
-    "message": "No query results for model [App\\Slider] 1"
+    "success": false,
+    "data": null,
+    "messages": [
+        "Id not found in  the database"
+    ]
 }
 ```
 
@@ -2175,7 +2191,7 @@ fetch(url, {
 curl -X PUT "http://localhost:8000/api/v1/sliders/1" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"title":"culpa","image":"iure","sub_title":"dignissimos"}'
+    -d '{"title":"beatae","image":"veritatis","sub_title":"dolore"}'
 
 ```
 
@@ -2189,9 +2205,9 @@ let headers = {
 }
 
 let body = {
-    "title": "culpa",
-    "image": "iure",
-    "sub_title": "dignissimos"
+    "title": "beatae",
+    "image": "veritatis",
+    "sub_title": "dolore"
 }
 
 fetch(url, {
@@ -2312,7 +2328,7 @@ fetch(url, {
 curl -X POST "http://localhost:8000/api/v1/users" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"first_name":"ea","last_name":"aperiam","middle_name":"numquam","email":"ea","password":"magni","roles":[11]}'
+    -d '{"first_name":"vel","last_name":"molestias","middle_name":"culpa","email":"culpa","password":"animi","roles":[12]}'
 
 ```
 
@@ -2326,13 +2342,13 @@ let headers = {
 }
 
 let body = {
-    "first_name": "ea",
-    "last_name": "aperiam",
-    "middle_name": "numquam",
-    "email": "ea",
-    "password": "magni",
+    "first_name": "vel",
+    "last_name": "molestias",
+    "middle_name": "culpa",
+    "email": "culpa",
+    "password": "animi",
     "roles": [
-        11
+        12
     ]
 }
 
@@ -2416,7 +2432,7 @@ fetch(url, {
 curl -X PUT "http://localhost:8000/api/v1/users/2" \
     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M" \
     -H "Content-Type: application/json" \
-    -d '{"first_name":"similique","last_name":"hic","middle_name":"enim","email":"quasi","password":"consectetur","roles":[1]}'
+    -d '{"first_name":"unde","last_name":"optio","middle_name":"non","email":"nisi","password":"reprehenderit","roles":[6]}'
 
 ```
 
@@ -2430,13 +2446,13 @@ let headers = {
 }
 
 let body = {
-    "first_name": "similique",
-    "last_name": "hic",
-    "middle_name": "enim",
-    "email": "quasi",
-    "password": "consectetur",
+    "first_name": "unde",
+    "last_name": "optio",
+    "middle_name": "non",
+    "email": "nisi",
+    "password": "reprehenderit",
     "roles": [
-        1
+        6
     ]
 }
 
@@ -3064,5 +3080,130 @@ fetch(url, {
 
 
 <!-- END_a0122b565edaf776aa8feafb62b7771d -->
+
+<!-- START_6e1b22ce7da0eeee6952e6031a0e1f29 -->
+## Display a listing of the resource.
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost:8000/api/v1/customer/orders" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("http://localhost:8000/api/v1/customer/orders");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": "Token not provided"
+}
+```
+
+### HTTP Request
+`GET api/v1/customer/orders`
+
+
+<!-- END_6e1b22ce7da0eeee6952e6031a0e1f29 -->
+
+<!-- START_41e8a44c45239795f054103e095f9dea -->
+## Display the specified resource.
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost:8000/api/v1/customer/orders/1" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("http://localhost:8000/api/v1/customer/orders/1");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": "Token not provided"
+}
+```
+
+### HTTP Request
+`GET api/v1/customer/orders/{id}`
+
+
+<!-- END_41e8a44c45239795f054103e095f9dea -->
+
+<!-- START_8d65903e62dc2b7696ec1f7f851e942c -->
+## api/v1/customer/{customer_id}/orders
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost:8000/api/v1/customer/1/orders" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M"
+```
+
+```javascript
+const url = new URL("http://localhost:8000/api/v1/customer/1/orders");
+
+let headers = {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU2MzUyMTE1NywiZXhwIjoxNTYzNTI0NzU3LCJuYmYiOjE1NjM1MjExNTcsImp0aSI6IktIVEpQWWN1WUVxcjliZ1kiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ZQBucL9PWPcQGjBbAPZrhj0blKdFOkntO1VIo9enN5M",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": "Token not provided"
+}
+```
+
+### HTTP Request
+`GET api/v1/customer/{customer_id}/orders`
+
+
+<!-- END_8d65903e62dc2b7696ec1f7f851e942c -->
 
 

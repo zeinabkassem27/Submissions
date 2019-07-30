@@ -27,7 +27,7 @@ class ContactsApiController extends Controller {
     public function index() {
         $contacts = Contact::all();
         
-        return $contacts;
+        return apiResponse( $contacts );
     }
     
     /**
@@ -44,7 +44,7 @@ class ContactsApiController extends Controller {
      *
      */
     public function store( StoreContactRequest $request ) {
-        return Contact::create( $request->all() );
+        return apiResponse( Contact::create( $request->all() ) );
     }
     
     /**
@@ -61,8 +61,10 @@ class ContactsApiController extends Controller {
      * @bodyParam phone_number string The user phone number
      */
     public function update( UpdateContactRequest $request, Contact $contact ) {
-        dd(2);
-        return $contact->update( $request->all() );
+        
+        $update = $contact->update( $request->all() );
+        
+        return apiResponse( $contact, $update );
     }
     
     /**
@@ -72,8 +74,16 @@ class ContactsApiController extends Controller {
      * For the {contact} pass the contact id
      *
      */
-    public function show( Contact $contact ) {
-        return $contact;
+    public function show( $id ) {
+        $contact = Contact::find( $id );
+        
+        if ( $contact === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in the database'
+            ) );
+        } else {
+            return apiResponse( $contact );
+        }
     }
     
     /**
@@ -83,7 +93,15 @@ class ContactsApiController extends Controller {
      * For the {contact} pass the contact id
      *
      */
-    public function destroy( Contact $contact ) {
-        return $contact->delete();
+    public function destroy( $id ) {
+        $contact = Contact::find( $id );
+        
+        if ( $contact === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in  the database'
+            ) );
+        } else {
+            return apiResponse( null, $contact->delete() );
+        }
     }
 }

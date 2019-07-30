@@ -28,6 +28,12 @@ Route::group( [ 'prefix' => 'v1', 'as' => 'admin.', 'namespace' => 'Api\V1\Admin
     
     Route::apiResource( 'pages-with-no-repeated-fields', 'PagesWithNoRepeatedFieldsApiController' );
     
+    Route::get('customer/orders', 'CustomerOrdersApiController@index');
+    Route::get('customer/orders/{id}', 'CustomerOrdersApiController@show');
+    Route::get('customer/{customer_id}/orders', 'CustomerOrdersApiController@selectCustomerOrders');
+    
+    
+    
     Route::fallback(function(){
         return response()->json([
             'message' => 'Page Not Found. If error persists, contact info@website.com'], 404);

@@ -21,8 +21,8 @@ class ServicesApiController extends Controller {
      */
     public function index() {
         $services = Service::all();
-        
-        return $services;
+    
+        return apiResponse( $services );
     }
     
     /**
@@ -34,7 +34,7 @@ class ServicesApiController extends Controller {
      *
      */
     public function store( StoreServiceRequest $request ) {
-        return Service::create( $request->all() );
+        return apiResponse( Service::create( $request->all() ) );
     }
     
     /**
@@ -46,23 +46,39 @@ class ServicesApiController extends Controller {
      *
      */
     public function update( UpdateServiceRequest $request, Service $service ) {
-        return $service->update( $request->all() );
+        $update = $service->update( $request->all() );
+    
+        return apiResponse( $service, $update );
     }
     
     /**
      * List the details of 1 service by providing the service id <br/>
      */
-    public function show( Service $service ) {
-        return $service;
+    public function show( $id ) {
+        
+        $service = Service::find( $id );
+        
+        
+        if ( $service === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in  the database'
+            ) );
+        } else {
+            return apiResponse( $service );
+        }
     }
     
     /**
      * Completely delete service by providing 1 service id per time
      *  /api/v1/services/{service} where service is an integer
      */
-    public function destroy( Service $service ) {
-        $service->delete();
+    public function destroy( $id ) {
+        $service = Service::find( $id );
         
-        return response( "OK", 200 );
+        if ( $service === null ) {
+            return apiResponse( null, false );
+        } else {
+            return apiResponse( null, $service->delete() );
+        }
     }
 }

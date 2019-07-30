@@ -12,11 +12,10 @@ use App\User;
  *
  * APIs for managing users
  */
-class UsersApiController extends Controller
-{
+class UsersApiController extends Controller {
     
     public function __construct() {
-        $this->middleware('jwt.auth');
+        $this->middleware( 'jwt.auth' );
     }
     
     /**
@@ -25,10 +24,9 @@ class UsersApiController extends Controller
      * This api route return all the users in the database.
      *
      */
-    public function index()
-    {
+    public function index() {
         $users = User::with( 'roles' )->get();
-    
+        
         return apiResponse( $users );
     }
     
@@ -44,10 +42,9 @@ class UsersApiController extends Controller
      * @bodyParam roles.* integer required The role id of the registered user.
      *
      */
-    public function store(StoreUserRequest $request)
-    {
+    public function store( StoreUserRequest $request ) {
         $user = User::create( $request->all() );
-    
+        
         return apiResponse( $user );
     }
     
@@ -63,8 +60,7 @@ class UsersApiController extends Controller
      * @bodyParam roles.* integer required The role id of the registered user.
      *
      */
-    public function update(UpdateUserRequest $request, User $user)
-    {
+    public function update( UpdateUserRequest $request, User $user ) {
         return apiResponse( $user->update( $request->all() ) );
     }
     
@@ -72,8 +68,7 @@ class UsersApiController extends Controller
      * List the details of 1 user by user id <br/>
      *  /api/v1/users/{user} where user is an integer
      */
-    public function show(User $user)
-    {
+    public function show( User $user ) {
         return apiResponse( $user );
     }
     
@@ -81,23 +76,13 @@ class UsersApiController extends Controller
      * Completely delete user by providing 1 user id per time
      *  /api/v1/users/{user} where user is an integer
      */
-    public function destroy($id)
-    {
+    public function destroy( $id ) {
+        $user = User::find( $id );
         
-        $user = User::find($id);
-        
-        if($user === null){
-            return apiResponse(null, false);
-        }else {
-        
+        if ( $user === null ) {
+            return apiResponse( null, false );
+        } else {
+            return apiResponse( null, $user->delete() );
         }
-        dd($users);
-        return $users;
-//
-//        if(count($users) > 0)
-//
-//        return apiResponse( [
-//            'id'=> $users->id
-//        ], $users->delete() );
     }
 }

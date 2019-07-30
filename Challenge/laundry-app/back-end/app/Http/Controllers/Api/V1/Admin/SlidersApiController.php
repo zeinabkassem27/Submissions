@@ -21,8 +21,8 @@ class SlidersApiController extends Controller {
      */
     public function index() {
         $sliders = Slider::all();
-        
-        return $sliders;
+    
+        return apiResponse( $sliders );
     }
     
     /**
@@ -34,7 +34,7 @@ class SlidersApiController extends Controller {
      *
      */
     public function store( StoreSliderRequest $request ) {
-        return Slider::create( $request->all() );
+        return apiResponse( Slider::create( $request->all() ) );
     }
     
     /**
@@ -44,25 +44,50 @@ class SlidersApiController extends Controller {
      * @bodyParam image file The slider image.
      * @bodyParam sub_title string The slider subtitle.
      *
+     * [PUT/PATCH]/api/v1/sliders/2
      */
-    public function update( UpdateSliderRequest $request, Slider $slider ) {
-        return $slider->update( $request->all() );
+    public function update( UpdateSliderRequest $request, $id ) {
+        $slider = Slider::find( $id );
+        
+        if ( $slider === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in the database'
+            ) );
+        } else {
+            $slider->update( $request->all() );
+            return apiResponse( $slider );
+        }
+//        return $slider->update( $request->all() );
     }
     
     /**
      * List the details of 1 slider by providing the slider id <br/>
      */
-    public function show( Slider $slider ) {
-        return $slider;
+    public function show( $id ) {
+        $slider = Slider::find( $id );
+        
+        if ( $slider === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in  the database'
+            ) );
+        } else {
+            return apiResponse( $slider );
+        }
     }
     
     /**
      * Completely delete slider by providing 1 slider id per time
      *  /api/v1/sliders/{slider} where slider is an integer
      */
-    public function destroy( Slider $slider ) {
-        $slider->delete();
+    public function destroy( $id ) {
+        $slider = Slider::find( $id );
         
-        return response( "OK", 200 );
+        if ( $slider === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in  the database'
+            ) );
+        } else {
+            return apiResponse( null, $slider->delete());
+        }
     }
 }

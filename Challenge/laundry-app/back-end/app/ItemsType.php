@@ -23,12 +23,12 @@ use Spatie\MediaLibrary\Models\Media;
  * @method static \Illuminate\Database\Query\Builder|\App\ItemsType onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\ItemsType query()
  * @method static bool|null restore()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\ItemsType whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\ItemsType whereDeletedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\ItemsType whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\ItemsType wherePrice($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\ItemsType whereTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\ItemsType whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\ItemsType whereCreatedAt( $value )
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\ItemsType whereDeletedAt( $value )
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\ItemsType whereId( $value )
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\ItemsType wherePrice( $value )
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\ItemsType whereTitle( $value )
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\ItemsType whereUpdatedAt( $value )
  * @method static \Illuminate\Database\Query\Builder|\App\ItemsType withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\ItemsType withoutTrashed()
  * @mixin \Eloquent
@@ -37,15 +37,15 @@ use Spatie\MediaLibrary\Models\Media;
  */
 class ItemsType extends Model implements HasMedia {
     use SoftDeletes, HasMediaTrait;
-
+    
     public $table = 'items_types';
-
+    
     protected $dates = [
         'created_at',
         'updated_at',
         'deleted_at',
     ];
-
+    
     protected $fillable = [
         'title',
         'price',

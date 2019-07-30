@@ -26,7 +26,7 @@ class RolesApiController extends Controller {
     public function index() {
         $roles = Role::all();
         
-        return $roles;
+        return apiResponse( $roles );
     }
     
     /**
@@ -38,7 +38,7 @@ class RolesApiController extends Controller {
      *
      */
     public function store( StoreRoleRequest $request ) {
-        return Role::create( $request->all() );
+        return apiResponse( Role::create( $request->all() ) );
     }
     
     /**
@@ -50,22 +50,40 @@ class RolesApiController extends Controller {
      *
      */
     public function update( UpdateRoleRequest $request, Role $role ) {
-        return $role->update( $request->all() );
+        $update = $role->update( $request->all() );
+        
+        return apiResponse( $role, $update );
     }
     
     /**
      * List the details of 1 role by role id <br/>
      *  /api/v1/roles/{role} where role is an integer
      */
-    public function show( Role $role ) {
-        return $role;
+    public function show( $id ) {
+        $role = Role::find( $id );
+        
+        if ( $role === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in  the database'
+            ) );
+        } else {
+            return apiResponse( $role );
+        }
     }
     
     /**
      * Completely delete role by providing 1 role id per time
      *  /api/v1/roles/{role} where role is an integer
      */
-    public function destroy( Role $role ) {
-        return $role->delete();
+    public function destroy( $id ) {
+        $role = Role::find( $id );
+        
+        if ( $role === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in  the database'
+            ) );
+        } else {
+            return apiResponse( null, $role->delete() );
+        }
     }
 }

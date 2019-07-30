@@ -26,9 +26,13 @@ class ItemsTypeApiController extends Controller
      */
     public function index()
     {
-        $itemsTypes = ItemsType::all();
-
-        return $itemsTypes;
+        $itemsTypes    = ItemsType::all();
+        $new_itemTypes = [];
+        foreach ( $itemsTypes as $items_type ) {
+            $new_itemTypes[] = $items_type->getImageAttribute();
+        }
+        
+        return apiResponse( $itemsTypes );
     }
     
     /**
@@ -40,7 +44,13 @@ class ItemsTypeApiController extends Controller
      */
     public function store(StoreItemsTypeRequest $request)
     {
-        return ItemsType::create($request->all());
+        $itemsType = ItemsType::create( $request->all() );
+        if ( $request->file( 'image', false ) ) {
+    
+            $itemsType->addMedia( storage_path( 'tmp/uploads/' . $request->file( 'image' ) ) )->toMediaCollection( 'image' );
+        }
+    
+        return apiResponse( $itemsType );
     }
     
     /**
@@ -52,22 +62,40 @@ class ItemsTypeApiController extends Controller
      */
     public function update(UpdateItemsTypeRequest $request, ItemsType $itemsType)
     {
-        return $itemsType->update($request->all());
+        $update = $itemsType->update( $request->all() );
+    
+        return apiResponse( $itemsType, $update );
     }
     
     /**
      * List the details of 1 item type<br/>
      */
-    public function show(ItemsType $itemsType)
+    public function show( $id )
     {
-        return $itemsType;
+        $itemsType = ItemsType::find( $id );
+    
+        if ( $itemsType === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in the database'
+            ) );
+        } else {
+            return apiResponse( $itemsType );
+        }
     }
     
     /**
      * Completely delete an item type by providing the item type id
      */
-    public function destroy(ItemsType $itemsType)
+    public function destroy( $id )
     {
-        return $itemsType->delete();
+        $itemsType = ItemsType::find( $id );
+    
+        if ( $itemsType === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in the database',
+            ) );
+        } else {
+            return apiResponse( null, $itemsType->delete() );
+        }
     }
 }

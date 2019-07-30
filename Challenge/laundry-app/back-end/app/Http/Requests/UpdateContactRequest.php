@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\User;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Support\Facades\Auth;
 
 class UpdateContactRequest extends FormRequest
 {
@@ -19,25 +17,21 @@ class UpdateContactRequest extends FormRequest
     {
         return [
             'subject'      => [
-                'required',
+                'string',
             ],
             'message'      => [
-                'required',
+                'string',
             ],
             'email'        => [
-                'required',
                 'email'
             ],
             'name'         => [
-                'nullable',
                 'string'
             ],
             'address'      => [
-                'nullable',
                 'string'
             ],
             'phone_number' => [
-                'nullable',
                 'string'
             ],
         ];

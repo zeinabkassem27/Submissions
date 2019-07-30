@@ -21,27 +21,45 @@ class PermissionsApiController extends Controller
     public function index()
     {
         $permissions = Permission::all();
-
-        return $permissions;
+    
+        return apiResponse( $permissions );
     }
 
     public function store(StorePermissionRequest $request)
     {
-        return Permission::create($request->all());
+        return apiResponse( Permission::create( $request->all() ) );
     }
 
     public function update(UpdatePermissionRequest $request, Permission $permission)
     {
-        return $permission->update($request->all());
+        $update = $permission->update( $request->all() );
+    
+        return apiResponse( $permission, $update );
     }
-
-    public function show(Permission $permission)
-    {
-        return $permission;
+    
+    public function show( $id ) {
+        $permission = Permission::find( $id );
+        
+        if ( $permission === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in  the database'
+            ) );
+        } else {
+            return apiResponse( null, $permission->delete() );
+        }
+        
     }
-
-    public function destroy(Permission $permission)
+    
+    public function destroy( $id )
     {
-        return $permission->delete();
+        $permission = Permission::find( $id );
+    
+        if ( $permission === null ) {
+            return apiResponse( null, false, array(
+                'Id not found in the database'
+            ) );
+        } else {
+            return apiResponse( null, $permission->delete() );
+        }
     }
 }
