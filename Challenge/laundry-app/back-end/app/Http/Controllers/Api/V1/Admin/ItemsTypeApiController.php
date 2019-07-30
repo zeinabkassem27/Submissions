@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreItemsTypeRequest;
 use App\Http\Requests\UpdateItemsTypeRequest;
 use App\ItemsType;
+use Illuminate\Http\Request;
 
 /**
  * @group Items type management
@@ -42,7 +43,7 @@ class ItemsTypeApiController extends Controller
      * @bodyParam price money required The item type title, number format should be with no more than 2 leading number after the decimal, 12.22 222,22.
      *
      */
-    public function store(StoreItemsTypeRequest $request)
+    public function store(Request $request)
     {
         $itemsType = ItemsType::create( $request->all() );
         if ( $request->file( 'image', false ) ) {

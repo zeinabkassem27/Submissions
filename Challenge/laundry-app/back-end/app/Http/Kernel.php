@@ -21,6 +21,7 @@ class Kernel extends HttpKernel
             'bindings',
             \App\Http\Middleware\AuthGates::class,
             \App\Http\Middleware\SetLocale::class,
+            \Barryvdh\Cors\HandleCors::class,
         ],
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
