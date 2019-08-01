@@ -44,8 +44,13 @@ class UsersApiController extends Controller {
      */
     public function store( StoreUserRequest $request ) {
         $user = User::create( $request->all() );
-        
-        return apiResponse( $user );
+    
+        if ( $request->has( 'roles' ) ) {
+            $user->roles()->sync( $request->input( 'roles', [] ) );
+        }
+        $user_with_roles = User::with( 'roles' )->find( $user->id );
+    
+        return apiResponse( $user_with_roles );
     }
     
     /**
@@ -61,15 +66,31 @@ class UsersApiController extends Controller {
      *
      */
     public function update( UpdateUserRequest $request, User $user ) {
-        return apiResponse( $user->update( $request->all() ) );
+        $update = $user->update( $request->all() );
+        
+        if ( $request->has( 'roles' ) ) {
+            $user->roles()->sync( $request->input( 'roles', [] ) );
+        }
+        $user_with_roles = User::with( 'roles' )->find( $user->id );
+    
+        return apiResponse( $user_with_roles, $update );
     }
     
     /**
      * List the details of 1 user by user id <br/>
      *  /api/v1/users/{user} where user is an integer
      */
-    public function show( User $user ) {
-        return apiResponse( $user );
+    public function show( $id ) {
+        $user = User::with( 'roles' )->find( $id );
+        
+        if ( $user === null ) {
+            return apiResponse( null, false, [
+                'Id not found in the database'
+            ] );
+        } else {
+            return apiResponse( $user );
+        }
+        
     }
     
     /**

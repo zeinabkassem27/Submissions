@@ -16,11 +16,13 @@ class UpdateItemsTypeRequest extends FormRequest
     {
         return [
             'title' => [
-                'required',
+                'string'
             ],
             'price' => [
-                'required',
                 'regex:/^\d+(\.\d{1,2})?$/'
+            ],
+            'image' => [
+                'image',
             ],
         ];
     }

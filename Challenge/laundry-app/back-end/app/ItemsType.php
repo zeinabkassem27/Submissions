@@ -68,4 +68,19 @@ class ItemsType extends Model implements HasMedia {
         
         return $file;
     }
+    
+    public function hasImageAttribute() {
+        $file = $this->getMedia( 'image' )->last();
+        
+        if ( $file ) {
+            return true;
+        } else {
+            return false;
+        }
+        
+    }
+    
+    public function getImageURL(){
+    
+    }
 }

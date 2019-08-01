@@ -24,7 +24,7 @@ class APILoginController extends Controller {
     public function login() {
         // get email and password from request
         $credentials = request( [ 'email', 'password' ] );
-        
+
         // try to auth and get the token using api authentication
         if ( ! $token = auth( 'api' )->attempt( $credentials ) ) {
             // if the credentials are wrong we send an unauthorized error in json format
@@ -73,4 +73,5 @@ class APILoginController extends Controller {
     public function refresh() {
         return $this->respondWithToken(Auth::guard('api')->refresh());
     }
+    
 }

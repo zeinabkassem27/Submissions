@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 trait MediaUploadingTrait
 {
-    public function storeMedia(Request $request)
+    public function storeMedia( Request $request, $file_key = 'file' )
     {
 // Validates file size
         if (request()->has('size')) {
@@ -34,8 +34,8 @@ trait MediaUploadingTrait
             }
         } catch (\Exception $e) {
         }
-
-        $file = $request->file('file');
+        
+        $file = $request->file( $file_key );
 
         $name = uniqid() . '_' . trim($file->getClientOriginalName());
 
@@ -46,4 +46,29 @@ trait MediaUploadingTrait
             'original_name' => $file->getClientOriginalName(),
         ]);
     }
+    
+    public function storeMediaFromAPI( Request $request, $file_key = 'file' ) {
+        
+        $path = storage_path( 'tmp/uploads' );
+        
+        try {
+            if ( ! file_exists( $path ) ) {
+                mkdir( $path, 0755, true );
+            }
+        } catch ( \Exception $e ) {
+            return false;
+        }
+        
+        $file = $request->file( $file_key );
+        
+        $name = uniqid() . '_' . trim( $file->getClientOriginalName() );
+        
+        $file->move( $path, $name );
+        
+        return [
+            'name'          => $name,
+            'original_name' => $file->getClientOriginalName(),
+        ];
+    }
+    
 }
