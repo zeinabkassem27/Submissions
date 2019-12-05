@@ -18,7 +18,7 @@ First, you need to create your own copy of these exercises. We call this a "fork
 
 ![Screenshot showing the clone details](/assets/images/fork-clone.png)
 
-![Screenshot showing the button to copy the clone details](/assetsimages/fork-copy-url.png)
+![Screenshot showing the button to copy the clone details](/assets/images/fork-copy-url.png)
 
 Next, you need to download your fork so that you have the files on your computer. Follow these steps to clone your fork. Open your Terminal and navigate to your directory for CodeYourFuture course work.
 
