@@ -1,8 +1,8 @@
 {
   "name": "html-css-git-exercises",
   "version": "1.0.0",
-  "description": "HTML, CSS and Git exercises for CodeYourFuture",
-  "author": "CodeYourFuture",
+  "description": "HTML, CSS and Git exercises for Codi",
+  "author": "Codi",
   "license": "ISC",
   "scripts": {
     "1": "live-server --open=week-1/1-parent-child",

@@ -8,8 +8,8 @@ Flexbox is used to change the layout of elements on the HTML page. In this exerc
 
 _Hint: The images below describe how `flex-direction` works. Try to imagine `flex-direction` as the direction of the arrow._
 
-![Screenshot of the flex direction row](/images/11/example-row.png)
+![Screenshot of the flex direction row](/Exercises/html-css-git-exercises/images/11/example-row.png)
 
-![Screenshot of the flex direction column](/images/11/example-column.png)
+![Screenshot of the flex direction column](/Exercises/html-css-git-exercises/images/11/example-column.png)
 
 You can review how `flex-direction` works in [this guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox).

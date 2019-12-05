@@ -7,6 +7,6 @@ With flexbox, the `align-items` property can be used to control how the items ar
 
 _Hint: You can review how `align-items` works in [this guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#article-header-id-7)._
 
-![Screenshot of the align-items with flexbox row](/images/13/example-align-row.png)
+![Screenshot of the align-items with flexbox row](/Exercises/html-css-git-exercises/images/13/example-align-row.png)
 
-![Screenshot of the align-items with flexbox row](/images/13/example-align-column.png)
+![Screenshot of the align-items with flexbox row](/Exercises/html-css-git-exercises/images/13/example-align-column.png)

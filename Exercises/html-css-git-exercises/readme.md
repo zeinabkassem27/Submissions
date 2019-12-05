@@ -26,7 +26,7 @@ This will launch the sample website for the first exercise in your browser.
 
 Now go back to your code editor. Open the first exercise in the `week-1` directory and find the `readme.md` file.
 
-![Screenshot showing how to open a preview of the readme for the first exercise](/images/fork-open-readme.gif)
+![Screenshot showing how to open a preview of the readme for the first exercise](/Exercises/html-css-git-exercises/images/fork-open-readme.gif)
 
 Read the instructions in the file you just opened. Follow the steps to complete the exercise.
 
@@ -42,4 +42,4 @@ npm run 2
 
 ## When you have completed all exercises
 
-When you reach the final exercise, you'll be asked to submit a pull request. When you've finished that task, post in your Slack channel to let the mentors know that you have finished.
+When you reach the final exercise, you'll be asked to submit a pull request. When you've finished that task, post in your Discord channel to let the mentors know that you have finished.

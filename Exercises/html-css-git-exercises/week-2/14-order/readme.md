@@ -13,4 +13,4 @@ In this exercise, you'll use order to move the items in the list. Follow the ste
 >
 > 1. Google the word "flexbox"
 > 2. Click on the link from "CSS-tricks"
->    ![Screenshot of how to google flexbox](/images/14/googling-flexbox.png)
+>    ![Screenshot of how to google flexbox](/Exercises/html-css-git-exercises/images/14/googling-flexbox.png)

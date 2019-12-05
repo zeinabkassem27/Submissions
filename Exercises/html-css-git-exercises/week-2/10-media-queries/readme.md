@@ -4,9 +4,9 @@ Media queries help us change how the webpage looks depending on the size of the 
 
 In this exercise, the following CSS will put the countries into two columns:
 
-```
+```css
 .countries {
-	columns: 2;
+  columns: 2;
 }
 ```
 

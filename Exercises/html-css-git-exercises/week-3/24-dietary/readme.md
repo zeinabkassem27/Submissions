@@ -7,7 +7,7 @@ When using the `checkbox` or `radio` input types, you often need to group the op
 
 When you are done, it should look like the image below.
 
-![Screenshot of the dietary needs after the first steps](/images/24/solution-1.png)
+![Screenshot of the dietary needs after the first steps](/Exercises/html-css-git-exercises/images/24/solution-1.png)
 
 If you have used the `for` and `id` attributes properly, you should be able to click on the name of each dietary requirement to check that box.
 
@@ -15,10 +15,10 @@ _Hint: If you click on one dietary requirement and it checks a different box, yo
 
 You may notice, however, that there is a small space between the checkbox and the label where you can click and the checkbox will not be changed. This can be frustrating for users. In this case, you can nest the checkbox _inside_ of your label.
 
-```
+```html
 <label>
-	<input type="checkbox" name="dietary">
-	Halal
+  <input type="checkbox" name="dietary" />
+  Halal
 </label>
 ```
 
@@ -32,4 +32,4 @@ When you're done, it should look exactly the same except that when you click on 
 
 Can you make each item appear on it's own line like the image below?
 
-![Screenshot of the dietary needs with each item on its own line](/images/24/solution-2.png)
+![Screenshot of the dietary needs with each item on its own line](/Exercises/html-css-git-exercises/images/24/solution-2.png)

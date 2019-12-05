@@ -11,6 +11,6 @@ Follow the steps below to complete this exercise. _Do not modify the index.html 
 
 When you complete this exercise it should look like the image below.
 
-![Screenshot of the solution](/images/8/solution.png).
+![Screenshot of the solution](/Exercises/html-css-git-exercises/images/8/solution.png).
 
 _Hint: All of the selectors you need are described [in this guide](https://learn.shayhowe.com/advanced-html-css/complex-selectors/)._

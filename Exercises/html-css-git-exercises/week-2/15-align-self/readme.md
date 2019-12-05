@@ -10,6 +10,6 @@ In this exercise, you will use `align-self` and `align-items` to change the posi
 
 ---
 
-![Example of align-items vs. align-self](/images/15/example.png)
+![Example of align-items vs. align-self](/Exercises/html-css-git-exercises/images/15/example.png)
 
 You can use the same values for `align-self` as you used for `align-items`.

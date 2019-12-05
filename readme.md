@@ -32,16 +32,16 @@ Run the following command in your terminal to clone this repository to your comp
 git clone <url>
 ```
 
-For example, if your fork's URL is `git@github.com:***/html-css-git-exercises.git`, the command would be:
+For example, if your fork's URL is `git@github.com:***/Submissions.git`, the command would be:
 
 ```
-git clone git@github.com:***/html-css-git-exercises.git
+git clone git@github.com:***/Submissions.git
 ```
 
 Next, navigate to the repository's directory and open your code editor.
 
 ```
-cd html-css-git-exercises
+cd Submissions
 code .
 ```
 

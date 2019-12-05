@@ -7,6 +7,6 @@ With flexbox, the `justify-content` property can be used to control how extra sp
 
 _Hint: You can review how `justify-content` works in [this guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox)._
 
-![Screenshot of the flex spacing](/images/12/example-space.png)
+![Screenshot of the flex spacing](/Exercises/html-css-git-exercises/images/12/example-space.png)
 
-![Screenshot of the flex spacing in a column](/images/12/example-space-column.png)
+![Screenshot of the flex spacing in a column](/Exercises/html-css-git-exercises/images/12/example-space-column.png)

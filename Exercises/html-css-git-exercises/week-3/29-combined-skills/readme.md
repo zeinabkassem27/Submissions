@@ -12,7 +12,7 @@ _To complete these exercises you should only modify `about.html`, `contact.html`
 
 ## 1. Made with ♥
 
-At the bottom of the website, you will find the text "Built with ♥ for CodeYourFuture". It would be fun to make the ♥ appear in red (`#c85308`).
+At the bottom of the website, you will find the text "Built with ♥ for Codi". It would be fun to make the ♥ appear in red (`#c85308`).
 
 To complete this exercise, follow the steps below.
 
@@ -21,7 +21,7 @@ To complete this exercise, follow the steps below.
 
 When you have done this, the text should look like the image below.
 
-![Screenshot of the red heart solution](/images/29-solution-heart.png)
+![Screenshot of the red heart solution](/Exercises/html-css-git-exercises/images/29-solution-heart.png)
 
 ## 2. Semantic HTML
 
@@ -46,13 +46,13 @@ _Hint: You will need to use a media query._
 
 When you are done, it should look like the image below for screens wider than 992px.
 
-![Screenshot of the hero solution](/images/29-solution-hero.png)
+![Screenshot of the hero solution](/Exercises/html-css-git-exercises/images/29-solution-hero.png)
 
 ## 4. Navigation Menu
 
 The navigation links in the header appear on top of each other.
 
-![Screenshot of the nav menu without modifications](/images/29-initial-nav-menu.png)
+![Screenshot of the nav menu without modifications](/Exercises/html-css-git-exercises/images/29-initial-nav-menu.png)
 
 These links could fit side by side. To complete this exercise, follow the steps below.
 
@@ -60,7 +60,7 @@ These links could fit side by side. To complete this exercise, follow the steps 
 
 When you are done, it should look like the image below.
 
-![Screenshot of the nav menu solution](/images/29-solution-nav-menu.png)
+![Screenshot of the nav menu solution](/Exercises/html-css-git-exercises/images/29-solution-nav-menu.png)
 
 ## 5. Header
 
@@ -72,7 +72,7 @@ _Hint: Make sure that all items are centred correctly, so that you can draw a li
 
 When you are done, it should look like the image below.
 
-![Screenshot of the nav menu solution](/images/29-solution-header.png)
+![Screenshot of the nav menu solution](/Exercises/html-css-git-exercises/images/29-solution-header.png)
 
 ## 6. Views
 
@@ -84,7 +84,7 @@ The links to view different articles are on top of each other. On wider screens,
 
 When you are done, it should look like the image below.
 
-![Screenshot of the views solution](/images/29-solution-views.png)
+![Screenshot of the views solution](/Exercises/html-css-git-exercises/images/29-solution-views.png)
 
 ## 7. Form Accessibility
 
@@ -99,7 +99,7 @@ Follow the steps below to complete this exercise.
 
 When you are done, you should be able to click on the label and begin typing a message like the image below.
 
-![Screenshot of the label solution](/images/29-solution-label.gif)
+![Screenshot of the label solution](/Exercises/html-css-git-exercises/images/29-solution-label.gif)
 
 ## 8. Email Field
 
@@ -112,7 +112,7 @@ _Hint: Look closely at the HTML for the form fields. To make the fields look exa
 
 When you are done, it should look like the image below.
 
-![Screenshot of the email solution](/images/29-solution-email.png)
+![Screenshot of the email solution](/Exercises/html-css-git-exercises/images/29-solution-email.png)
 
 ## 9. Required Fields
 
@@ -126,11 +126,11 @@ Follow the steps below to complete this exercise.
 
 When you submit the form with one field empty, you should see an error message like the image below.
 
-![Screenshot of the required fields solution](/images/29-solution-required.gif)
+![Screenshot of the required fields solution](/Exercises/html-css-git-exercises/images/29-solution-required.gif)
 
 ## 10. Radio Buttons
 
-CodeYourFuture has three branches: London, Glasgow and Manchester. When someone contacts us, we should ask them which branch they are interested in.
+Codi has three branches: Beirut, Tripoly and Sour. When someone contacts us, we should ask them which branch they are interested in.
 
 In this exercise you will add radio buttons for the user to indicate which branch they are interested in. Follow the steps below to complete this exercise.
 
@@ -140,7 +140,7 @@ In this exercise you will add radio buttons for the user to indicate which branc
 
 When you are done, it should look like the image below.
 
-![Screenshot of the radio buttons solution](/images/29-solution-radio.png)
+![Screenshot of the radio buttons solution](/Exercises/html-css-git-exercises/images/29-solution-radio.png)
 
 ## 11. Text Formatting
 
@@ -158,7 +158,7 @@ _Hint: Read this [question and answer](https://stackoverflow.com/questions/38454
 
 When you are done, the about text shoudl look like the image below.
 
-![Screenshot of the text formatting solution](/images/29-solution-text.png)
+![Screenshot of the text formatting solution](/Exercises/html-css-git-exercises/images/29-solution-text.png)
 
 ## 12. Submit your Pull Request
 

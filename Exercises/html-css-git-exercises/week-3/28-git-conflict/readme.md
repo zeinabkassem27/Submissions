@@ -72,7 +72,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 This tells you that there is a merge conflict in the file `week-3/20-git-conflict/styles.css`. If you open the file you will find that lines have been added to the file.
 
-```
+```CSS
 /* Add your own CSS code below */
 .link {
 <<<<<<< HEAD
@@ -89,18 +89,18 @@ Why did this happen? When git tried to merge the `purple_links` branch into `mas
 
 Since these commits change the same line of code, git doesn't know which one is correct. You have to tell it the correct code. To do this, edit the file to remove the added lines and the blue colour property, so that only the purple colour remains:
 
-```
+```css
 /* Add your own CSS code below */
 .link {
-	color: fuchsia;
-	font-weight: 700;
-	text-decoration: none;
+  color: fuchsia;
+  font-weight: 700;
+  text-decoration: none;
 }
 ```
 
 Test the changes in your browser. If the links have been changed to a purple colour, you've resolved the merge conflict. Now you need to add and commit the files to complete the merge. Run the following commands:
 
-```
+```shell
 git add week-3/20-git-conflict/styles.css
 git commit -m "Merge purple_links branch"
 ```

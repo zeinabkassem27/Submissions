@@ -1,6 +1,6 @@
 # Checkout Form
 
-This customer is ready to buy a CodeYourFuture t-shirt. We need to ask them who they are and how we can contact them so that we can send them the t-shirt.
+This customer is ready to buy a Codi t-shirt. We need to ask them who they are and how we can contact them so that we can send them the t-shirt.
 
 In this exercise you will add forms to collect checkout information. Follow the steps below to complete this exercise.
 
@@ -13,4 +13,4 @@ In this exercise you will add forms to collect checkout information. Follow the 
 
 When you're done, it should look like this.
 
-![Screenshot of the checkout form solution](/images/22/solution.png)
+![Screenshot of the checkout form solution](/Exercises/html-css-git-exercises/images/22/solution.png)
