@@ -1,10 +1,10 @@
 /* Add your CSS code below */
-.message__author {
-  background-color: red;
+article {
+  background-color: cadetblue;
 }
 #first-message {
-  background-color: blue;
+  background-color: red;
 }
 .message--latest {
-  background-color: green;
+  background-color: yellow;
 }
