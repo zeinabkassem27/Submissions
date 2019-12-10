@@ -15,3 +15,14 @@ ul {
   color: royalblue;
   padding: 20px;
 }
+footer {
+  height: 1rem;
+}
+img {
+  height: 70px;
+  widows: 70px;
+}
+#my_img {
+  height: 130px;
+  widows: 850px;
+}
