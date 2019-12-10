@@ -1,0 +1,13 @@
+.topnav {
+  background-color: black;
+}
+.nav-p {
+  font-size: 1.7rem;
+}
+
+a:link a:hover {
+  color: white;
+}
+a:visited {
+  color: red;
+}
