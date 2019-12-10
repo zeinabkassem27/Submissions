@@ -11,3 +11,7 @@ a:link a:hover {
 a:visited {
   color: red;
 }
+ul {
+  color: royalblue;
+  padding: 20px;
+}
