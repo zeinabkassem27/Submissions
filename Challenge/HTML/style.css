@@ -1,12 +1,16 @@
-.topnav {
-  background-color: black;
-}
 .nav-p {
   font-size: 1.7rem;
+  background-color: black;
+  text-align: center;
 }
 
-a:link a:hover {
+a:link {
   color: white;
+}
+a:hover {
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: white;
 }
 a:visited {
   color: red;
@@ -21,8 +25,23 @@ footer {
 img {
   height: 70px;
   widows: 70px;
+  text-align: right;
 }
-#my_img {
-  height: 130px;
-  widows: 850px;
+.my_img {
+  width: 100%;
+  height: 20em;
+}
+h1 {
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+.grid_container {
+  display: grid;
+  grid-template-columns: 40% auto;
+  grid-gap: 3em;
+}
+h2 {
+  text-decoration: underline;
 }
