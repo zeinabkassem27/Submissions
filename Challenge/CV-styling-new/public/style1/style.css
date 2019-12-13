@@ -8,25 +8,14 @@ h2 {
   margin-left: 13%;
 }
 hgroup {
-  background-color: grey;
+  background-color: #99989d;
   height: 10em;
 }
-.contacts {
-  background-color: black;
+.contact-value {
+  margin-left: 10em;
+  padding-top: 1em;
 }
-.contacts dt {
-  color: white;
-  background-color: red;
-}
-.contacts dd {
-  color: white;
-  background-color: red;
-}
-.contacts {
-  position: absolute;
-  top: 5%;
-  margin-left: 90%;
-}
+
 figure {
   position: absolute;
   top: 5%;
@@ -36,6 +25,8 @@ h3 {
   display: list-item;
   list-style-type: disc;
   list-style-position: inside;
+  border-bottom: 1px solid;
+  padding-bottom: 2em;
 }
 #about {
   margin-left: 3em;
@@ -53,8 +44,107 @@ h3 {
   margin-left: 3em;
 }
 h4 {
+  color: #ff0000;
+}
+.experience-date-separator {
   color: red;
 }
+.experience-details {
+  color: #dad6db;
+}
+.skills-secondary .skill[data-skill="5"] {
+  background: linear-gradient(90deg, #ff0000 50%, #cccccc 50%);
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  border: 0.4em solid #cccccc;
+  margin-bottom: 0.2em;
+  color: white;
+  opacity: 0.5;
+}
+.skill[data-skill="3"] {
+  background: linear-gradient(90deg, #ff0000 30%, #cccccc 30%);
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  border: 0.4em solid #cccccc;
+  margin-bottom: 0.2em;
+  color: white;
+}
+.skill[data-skill="1"] {
+  background: linear-gradient(90deg, #ff0000 3.4em, #cccccc 3.4em);
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  border: 0.4em solid #cccccc;
+  margin-bottom: 0.2em;
+  color: white;
+}
+.skill[data-skill="9"] {
+  background: linear-gradient(90deg, #ff0000 95%, #dbdbdb 95%);
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  border: 0.4em solid #cccccc;
+  margin-bottom: 0.2em;
+  color: white;
+  opacity: 0.5;
+}
+.skills-primary .skill[data-skill="5"] {
+  background: linear-gradient(90deg, #ff0000 50%, #cccccc 50%);
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  border: 0.4em solid #cccccc;
+  margin-bottom: 0.2em;
+  color: white;
+}
+.skill[data-skill="7"] {
+  background: linear-gradient(90deg, #ff0000 75%, #dbdbdb 75%);
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  border: 0.4em solid #dbdbdb;
+  margin-bottom: 0.2em;
+  color: white;
+  opacity: 0.5;
+}
+.skill span {
+  margin-left: 0.2em;
+}
+.skills-primary {
+  padding-bottom: 1em;
+}
 .content {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 2%;
+  margin-right: 4em;
+  margin-left: 4em;
+  margin-top: 4em;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+#contact > h3 {
+  display: none;
+}
+.contact-type {
+  background-color: black;
+  padding: 5px;
+  color: white;
+  background-color: red;
+  width: 150px;
+  float: left;
+  padding-top: -50px;
+}
+.contact-value a {
+  text-decoration: none;
+  color: red;
+  background-color: black;
+}
+.contact-value {
+  color: red;
+  background-color: black;
+}
+.contacts {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
