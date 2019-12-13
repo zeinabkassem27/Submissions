@@ -1,0 +1,60 @@
+h1 {
+  color: red;
+  margin-left: 13%;
+  padding-top: 1.2em;
+}
+h2 {
+  color: red;
+  margin-left: 13%;
+}
+hgroup {
+  background-color: grey;
+  height: 10em;
+}
+.contacts {
+  background-color: black;
+}
+.contacts dt {
+  color: white;
+  background-color: red;
+}
+.contacts dd {
+  color: white;
+  background-color: red;
+}
+.contacts {
+  position: absolute;
+  top: 5%;
+  margin-left: 90%;
+}
+figure {
+  position: absolute;
+  top: 5%;
+  margin-left: 30em;
+}
+h3 {
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+#about {
+  margin-left: 3em;
+}
+#competencies {
+  margin-left: 3em;
+}
+#experiences {
+  margin-left: 3em;
+}
+#hobbies {
+  margin-left: 3em;
+}
+#education {
+  margin-left: 3em;
+}
+h4 {
+  color: red;
+}
+.content {
+  display: flex;
+}
