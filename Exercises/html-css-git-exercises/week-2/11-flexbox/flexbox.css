@@ -1,1 +1,27 @@
 /* Add your own CSS code below */
+.panel {
+  display: flex;
+}
+.countries--first {
+  flex-direction: row-reverse;
+  display: flex;
+  font-size: 12px;
+  border-style: solid;
+  border-left-width: 50px;
+  border-color: #25262f;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+}
+.countries--first li {
+  height: 10px;
+}
+
+.countries--second {
+  width: 30em;
+}
+.countries--third {
+  width: 30em;
+  flex-direction: column-reverse;
+  display: flex;
+}
