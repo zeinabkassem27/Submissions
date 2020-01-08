@@ -3,3 +3,25 @@
 }
 
 /* Add your own CSS code below */
+.countries--first :nth-child(1) {
+  order: 5;
+}
+.countries--first {
+  font-size: 14px;
+}
+
+.countries--third {
+  flex-direction: row-reverse;
+  font-size: 12px;
+  justify-content: left;
+}
+.countries--second {
+  font-size: 12px;
+  justify-content: left;
+}
+.countries--second .country--brazil {
+  order: 4;
+}
+.countries--second .country--uganda {
+  order: 5;
+}
