@@ -9,3 +9,12 @@ CREATE TABLE "students" ( `ID` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `Name
 INSERT INTO graduates (Name, Age, Gender,Points) SELECT Name, Age, Gender, Points FROM students where Name='Layal';
 UPDATE graduates SET Graduation= '2020-1-27' WHERE Name = 'Layal';
 delete from students where Name='Layal'
+
+1-CREATE TABLE "employeeTable" ( `ID` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `Name` TEXT NOT NULL UNIQUE, `Company` TEXT,`CompanyDate` date )
+
+2-insert into employeeTable (Name, Company, CompanyDate) select  e.Name, e.Company,c.Date from employees e,companies c where e.Company =c.Name
+
+3-select name from employeeTable where CompanyDate<2000
+(OR) SELECT E.Name FROM employees E JOIN companies C ON E.Company = C.Name and C.Date<2000;
+
+4-select Company from employees where Role='Graphic Designer'
