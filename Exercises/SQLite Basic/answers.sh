@@ -18,3 +18,9 @@ delete from students where Name='Layal'
 (OR) SELECT E.Name FROM employees E JOIN companies C ON E.Company = C.Name and C.Date<2000;
 
 4-select Company from employees where Role='Graphic Designer'
+
+1-SELECT MAX (Points) AS "Max Points" FROM students;
+2-SELECT AVG(Points) FROM students
+3-SELECT COUNT (ID) FROM students where Points=500
+4-SELECT name FROM students WHERE Name LIKE '%s%'; 
+5-SELECT * FROM table_name ORDER BY column_name ASC|DESC
