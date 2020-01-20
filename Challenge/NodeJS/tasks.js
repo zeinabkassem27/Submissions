@@ -1,9 +1,4 @@
-let list_tasks = [
-  { task: "php", done: false },
-  { task: "js", done: false },
-  { task: "c++", done: false },
-  { task: "html", done: false }
-];
+let list_tasks = [];
 /**
  * Starts the application
  * This is the function that is run when the app starts
@@ -20,6 +15,7 @@ function startApp(name) {
   process.stdin.on("data", onDataReceived);
   console.log(`Welcome to ${name}'s application!`);
   console.log("--------------------");
+  readFile();
 }
 
 /**
@@ -130,6 +126,7 @@ function remove(x) {
  */
 function quit() {
   console.log("Quitting now, goodbye!");
+  savefile(list_tasks);
   process.exit();
 }
 function display() {
@@ -145,6 +142,23 @@ function add(x) {
   };
   list_tasks.push(taskToAdd);
   display();
+}
+
+function savefile(x) {
+  var fs = require("fs");
+  fs.writeFile("database.json", JSON.stringify(x), function(err) {
+    if (err) throw err;
+  });
+  console.log("File is created successfully.");
+}
+function readFile() {
+  "use strict";
+  var fs = require("fs");
+  fs.readFile("database.json", (err, data) => {
+    if (err) throw err;
+    let student = JSON.parse(data);
+    list_tasks = student;
+  });
 }
 
 // The following line starts the application
