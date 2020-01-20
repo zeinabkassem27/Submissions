@@ -46,6 +46,8 @@ function onDataReceived(text) {
   } else if (stringArray[0] === "add") {
     if (stringArray[2] != "") add(stringArray[2]);
     else console.log("enter somthing to add to the list please");
+  } else if (stringArray[0] === "remove") {
+    remove(stringArray[2]);
   } else {
     unknownCommand(text);
   }
@@ -84,6 +86,11 @@ function unknownCommand(c) {
 function hello(name) {
   if (name == "") console.log("hello!");
   else console.log("hello " + name + "!");
+}
+function remove(x) {
+  if (x != "") list_task.splice(x, 1);
+  else list_task.splice(list_task.length - 1, 1);
+  display();
 }
 
 /**
