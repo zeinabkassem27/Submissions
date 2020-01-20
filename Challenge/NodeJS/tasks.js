@@ -39,7 +39,6 @@ function startApp(name) {
  */
 function onDataReceived(text) {
   var stringArray = text.split(/(\s+)/);
-  console.log(stringArray);
   if (text === "quit\n" || text === "exit\n") {
     quit();
   } else if (stringArray[0] === "hello") {
@@ -63,9 +62,15 @@ function onDataReceived(text) {
     }
   } else if (stringArray[0] === "remove") {
     remove(stringArray[2]);
-  } else {
-    unknownCommand(text);
-  }
+  } else if (stringArray[0] == "check") {
+    if (parseInt(stringArray[2]) < list_tasks.length) check(stringArray[2]);
+    else console.log("exeed the length of the list");
+  } else unknownCommand(text);
+}
+
+function check(num) {
+  list_tasks[num].done = true;
+  display();
 }
 
 /**
@@ -126,7 +131,7 @@ function quit() {
 }
 function display() {
   for (let i = 0; i < list_tasks.length; i++) {
-    console.log(i + "- " + list_tasks[i].task);
+    console.log(i + "- " + list_tasks[i].task + " : " + list_tasks[i].done);
   }
 }
 function add(x) {
