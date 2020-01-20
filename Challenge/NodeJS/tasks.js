@@ -37,13 +37,23 @@ function onDataReceived(text) {
   } else if (text === "hello\n") {
     hello();
   } else if (text === "help\n") {
-    console.log('write "quit" or "exit" to exit');
-    console.log('write "hello" to say hello! ');
+    help();
   } else {
     unknownCommand(text);
   }
 }
 
+/**
+ * prints "help command"
+ * This function is supposed to show the user what command are available to use
+ *
+ * @param  {string} c the text received
+ * @returns {void}
+ */
+function help() {
+  console.log('write "quit" or "exit" to exit');
+  console.log('write "hello" to say hello! ');
+}
 /**
  * prints "unknown command"
  * This function is supposed to run when all other commands have failed
