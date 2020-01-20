@@ -1,4 +1,9 @@
-let list_task = ["php", "css", "react", "js"];
+let list_tasks = [
+  { task: "php", done: false },
+  { task: "js", done: false },
+  { task: "c++", done: false },
+  { task: "html", done: false }
+];
 /**
  * Starts the application
  * This is the function that is run when the app starts
@@ -34,6 +39,7 @@ function startApp(name) {
  */
 function onDataReceived(text) {
   var stringArray = text.split(/(\s+)/);
+  console.log(stringArray);
   if (text === "quit\n" || text === "exit\n") {
     quit();
   } else if (stringArray[0] === "hello") {
@@ -44,8 +50,17 @@ function onDataReceived(text) {
   } else if (text === "display\n") {
     display();
   } else if (stringArray[0] === "add") {
-    if (stringArray[2] != "") add(stringArray[2]);
-    else console.log("enter somthing to add to the list please");
+    if (stringArray[2] == "")
+      console.log("enter somthing to add to the list please");
+    else {
+      stringArray.splice(0, 2);
+      let name = "";
+      for (let i = 0; i < stringArray.length - 2; i++) {
+        if (stringArray.lenth - 3 == " ") {
+        } else name += stringArray[i];
+      }
+      add(name);
+    }
   } else if (stringArray[0] === "remove") {
     remove(stringArray[2]);
   } else {
@@ -93,11 +108,10 @@ function hello(name) {
   else console.log("hello " + name + "!");
 }
 function remove(x) {
-  console.log(list_task.length);
-  if (parseInt(x) < list_task.length) list_task.splice(x, 1);
-  else if (parseInt(x) >= list_task.length)
+  if (parseInt(x) < list_tasks.length) list_tasks.splice(x, 1);
+  else if (parseInt(x) >= list_tasks.length)
     console.log("you exceed the length if list");
-  else if (x == "") list_task.splice(list_task.length - 1, 1);
+  else if (x == "") list_tasks.splice(list_tasks.length - 1, 1);
   display();
 }
 
@@ -111,12 +125,17 @@ function quit() {
   process.exit();
 }
 function display() {
-  for (let i = 0; i < list_task.length; i++) {
-    console.log(i + "- " + list_task[i]);
+  for (let i = 0; i < list_tasks.length; i++) {
+    console.log(i + "- " + list_tasks[i].task);
   }
 }
 function add(x) {
-  list_task.push(x);
+  console.log(x);
+  taskToAdd = {
+    task: x,
+    done: false
+  };
+  list_tasks.push(taskToAdd);
   display();
 }
 
