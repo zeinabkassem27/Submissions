@@ -93,8 +93,11 @@ function hello(name) {
   else console.log("hello " + name + "!");
 }
 function remove(x) {
-  if (x != "") list_task.splice(x, 1);
-  else list_task.splice(list_task.length - 1, 1);
+  console.log(list_task.length);
+  if (parseInt(x) < list_task.length) list_task.splice(x, 1);
+  else if (parseInt(x) >= list_task.length)
+    console.log("you exceed the length if list");
+  else if (x == "") list_task.splice(list_task.length - 1, 1);
   display();
 }
 
