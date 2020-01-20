@@ -33,11 +33,11 @@ function startApp(name) {
  */
 function onDataReceived(text) {
   var stringArray = text.split(/(\s+)/);
-  console.log(stringArray[2]);
   if (text === "quit\n" || text === "exit\n") {
     quit();
   } else if (stringArray[0] === "hello") {
-    hello(stringArray[2]);
+    if (stringArray[2] != " ") hello(stringArray[2]);
+    else hello(" ");
   } else if (text === "help\n") {
     help();
   } else {
@@ -73,7 +73,7 @@ function unknownCommand(c) {
  * @returns {void}
  */
 function hello(name) {
-  console.log("hello " + name + " !");
+  console.log("hello " + name + "!");
 }
 
 /**
