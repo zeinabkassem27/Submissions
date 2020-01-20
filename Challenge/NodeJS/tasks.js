@@ -55,6 +55,9 @@ function onDataReceived(text) {
 function help() {
   console.log('write "quit" or "exit" to exit');
   console.log('write "hello" to say hello! ');
+  console.log(
+    'write hello anything to say "hello anyhing" for example if you wrote "hello batata" the ouput will be "hello batata!"'
+  );
 }
 /**
  * prints "unknown command"
