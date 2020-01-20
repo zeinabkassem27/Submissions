@@ -91,6 +91,9 @@ function help() {
   console.log(
     'write "remove" inorder to remove last itemm in the list or write "remove number" to remove the index you specified'
   );
+  console.log(
+    'write "check number" to make the done into true else if you enter "check" it will be error'
+  );
 }
 /**
  * prints "unknown command"
