@@ -37,7 +37,7 @@ function onDataReceived(text) {
     quit();
   } else if (stringArray[0] === "hello") {
     if (stringArray[2] != " ") hello(stringArray[2]);
-    else hello(" ");
+    else hello("");
   } else if (text === "help\n") {
     help();
   } else {
@@ -76,7 +76,8 @@ function unknownCommand(c) {
  * @returns {void}
  */
 function hello(name) {
-  console.log("hello " + name + "!");
+  if (name == "") console.log("hello!");
+  else console.log("hello " + name + "!");
 }
 
 /**
