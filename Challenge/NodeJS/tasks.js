@@ -42,8 +42,10 @@ function onDataReceived(text) {
   } else if (text === "help\n") {
     help();
   } else if (text === "display\n") {
-    console.log("true");
     display();
+  } else if (stringArray[0] === "add") {
+    if (stringArray[2] != "") add(stringArray[2]);
+    else console.log("enter somthing to add to the list please");
   } else {
     unknownCommand(text);
   }
@@ -94,10 +96,13 @@ function quit() {
   process.exit();
 }
 function display() {
-  console.log("yghg");
   for (let i = 0; i < list_task.length; i++) {
     console.log(i + "- " + list_task[i]);
   }
+}
+function add(x) {
+  list_task.push(x);
+  display();
 }
 
 // The following line starts the application
