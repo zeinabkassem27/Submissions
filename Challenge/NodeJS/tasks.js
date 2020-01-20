@@ -66,6 +66,11 @@ function help() {
   console.log(
     'write hello anything to say "hello anyhing" for example if you wrote "hello batata" the ouput will be "hello batata!"'
   );
+  console.log('write "display" inorder to display the list');
+  console.log('write "add something" inorder to add to the last ');
+  console.log(
+    'write "remove" inorder to remove last itemm in the list or write "remove number" to remove the index you specified'
+  );
 }
 /**
  * prints "unknown command"
