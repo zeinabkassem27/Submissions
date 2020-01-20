@@ -1,3 +1,4 @@
+let list_task = ["php", "css", "react", "js"];
 /**
  * Starts the application
  * This is the function that is run when the app starts
@@ -40,6 +41,9 @@ function onDataReceived(text) {
     else hello("");
   } else if (text === "help\n") {
     help();
+  } else if (text === "display\n") {
+    console.log("true");
+    display();
   } else {
     unknownCommand(text);
   }
@@ -88,6 +92,12 @@ function hello(name) {
 function quit() {
   console.log("Quitting now, goodbye!");
   process.exit();
+}
+function display() {
+  console.log("yghg");
+  for (let i = 0; i < list_task.length; i++) {
+    console.log(i + "- " + list_task[i]);
+  }
 }
 
 // The following line starts the application
