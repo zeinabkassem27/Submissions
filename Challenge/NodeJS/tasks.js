@@ -34,8 +34,11 @@ function startApp(name) {
 function onDataReceived(text) {
   if (text === "quit\n" || text === "exit\n") {
     quit();
-  } else if (text === "hello") {
+  } else if (text === "hello\n") {
     hello();
+  } else if (text === "help\n") {
+    console.log('write "quit" or "exit" to exit');
+    console.log('write "hello" to say hello! ');
   } else {
     unknownCommand(text);
   }
