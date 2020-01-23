@@ -131,25 +131,34 @@ app.get('/movies/delete/:ID', (req, res) => {
 
 });
 
-app.get('/movies/read/by-date', (req, res) => {
-    res.json({
-        status: 200,
-        data: movies.sort((a, b) => a.year - b.year)
-    });
-});
+app.get('/movies/read/:ID', (req, res) => {
+    let choice = req.params.ID,
+        my_data, flag = 0;
+    switch (choice) {
+        case 'by-date':
+            flag = 1;
+            my_data = movies.sort((a, b) => a.year - b.year);
+            break;
+        case 'by-rating':
+            flag = 1;
+            my_data = movies.sort((a, b) => a.rating - b.rating);
+            break;
+        case 'by-title':
+            flag = 1;
+            my_data = movies.sort((a, b) => a.title.localeCompare(b.title));
+            break;
+        default:
+            res.json({
+                status: 400,
+                message: "wrong url"
+            });
+    }
+    if (flag == 1)
+        res.json({
+            status: 200,
+            data: movies
+        });
 
-app.get('/movies/read/by-rating', (req, res) => {
-    res.json({
-        status: 200,
-        data: movies.sort((a, b) => a.rating - b.rating)
-    });
-});
-
-app.get('/movies/read/by-title', (req, res) => {
-    res.json({
-        status: 200,
-        data: movies.sort((a, b) => a.title.localeCompare(b.title))
-    });
 });
 
 app.get('/movies/id/:ID', (req, res) => {
@@ -172,37 +181,36 @@ app.get('/movies/id/:ID', (req, res) => {
 
 app.get('/movies/update/:ID', (req, res) => {
     let update_id = req.params.ID,
-        update_year =req.query.year,
+        update_year = req.query.year,
         update_rate = parseFloat(req.query.rating)
-        update_title = req.query.title;
-    let flag=0;
-    if (parseInt(update_id)<movies.length) {
-        if (update_title){
+    update_title = req.query.title;
+    let flag = 0;
+    if (parseInt(update_id) < movies.length) {
+        if (update_title) {
             movies[update_id].title = update_title;
-            flag=1;
+            flag = 1;
         }
-        if (update_rate){
+        if (update_rate) {
             movies[update_id].rating = update_rate;
-            flag=1;
+            flag = 1;
         }
-        if (update_year && update_year.length == 4){
+        if (update_year && update_year.length == 4) {
             movies[update_id].year = parseInt(update_year);
-            flag=1;
+            flag = 1;
         }
-        if(flag==1){
-        res.json({
-            status: 200,
-            message: "update took place in index " + update_id,
-            data: movies[update_id]
-        })
-    }
-    else{
-        res.json({
-            status: 404,
-            message: " wrong entering data"
-        })
+        if (flag == 1) {
+            res.json({
+                status: 200,
+                message: "update took place in index " + update_id,
+                data: movies[update_id]
+            })
+        } else {
+            res.json({
+                status: 404,
+                message: " wrong entering data"
+            })
 
-    }
+        }
     } else {
         res.json({
             status: 404,
