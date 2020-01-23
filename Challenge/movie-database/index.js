@@ -72,10 +72,36 @@ app.get('/movies/read', (req, res) => {
 });
 
 app.get('/movies/add', (req, res) => {
-    res.json({
-        status: 200,
-        message: "addition"
-    });
+    let new_title = req.query.title,
+        new_year = req.query.year,
+        new_rate = req.query.rating;
+    if (new_title && new_year && parseInt(new_year).length==4) {
+        if (parseInt(new_rate)){
+            movies.push({
+                title: new_title,
+                year: parseInt(new_year),
+                rating: parseInt(new_rate)
+            });
+        }
+        else{
+            movies.push({
+                title: new_title,
+                year: parseInt(new_year),
+                rating:4
+            })}
+        res.json({
+            status: 200,
+            message: "added into array",
+            data: movies
+        });
+
+    } else {
+        res.json({
+            status: 403,
+            message: "wrong"
+        });
+
+    }
 });
 app.get('/movies/create', (req, res) => {
     res.json({
@@ -111,18 +137,21 @@ app.get('/movies/read/by-title', (req, res) => {
 });
 
 app.get('/movies/id/:ID', (req, res) => {
-    let index=parseInt(req.params.ID);
-    if(index && index<movies.length){
-        if(index<movies.length){
-        res.json({
-        status: 200,
-        data:movies[index]
-    });
-}
-}
-else{//wrong request
-    res.status(404).json({status:404,error:true,message:"the movie "+index+" doesn't exist"});
-}
+    let index = parseInt(req.params.ID);
+    if (index && index < movies.length) {
+        if (index < movies.length) {
+            res.json({
+                status: 200,
+                data: movies[index]
+            });
+        }
+    } else { //wrong request
+        res.status(404).json({
+            status: 404,
+            error: true,
+            message: "the movie " + index + " doesn't exist"
+        });
+    }
 });
 
 
