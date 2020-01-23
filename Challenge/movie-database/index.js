@@ -106,7 +106,7 @@ app.get('/movies/read/by-rating', (req, res) => {
 app.get('/movies/read/by-title', (req, res) => {
     res.json({
         status: 200,
-        data: movies.sort((a, b) => a.title - b.title)
+        data: movies.sort((a, b) => a.title.localeCompare(b.title))
     });
 });
 
