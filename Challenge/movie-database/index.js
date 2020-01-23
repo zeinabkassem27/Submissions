@@ -110,5 +110,21 @@ app.get('/movies/read/by-title', (req, res) => {
     });
 });
 
+app.get('/movies/id/:ID', (req, res) => {
+    let index=parseInt(req.params.ID);
+    if(index && index<movies.length){
+        if(index<movies.length){
+        res.json({
+        status: 200,
+        data:movies[index]
+    });
+}
+}
+else{//wrong request
+    res.status(404).json({status:404,error:true,message:"the movie "+index+" doesn't exist"});
+}
+});
+
+
 // Only works on 3000 regardless of what I set environment port to or how I set [value] in app.set('port', [value]).
 app.listen(5050);
