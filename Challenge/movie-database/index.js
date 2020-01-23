@@ -109,11 +109,25 @@ app.get('/movies/create', (req, res) => {
         message: "creation"
     });
 });
-app.get('/movies/delete', (req, res) => {
-    res.json({
-        status: 200,
-        message: "deletion"
-    });
+app.get('/movies/delete/:ID', (req, res) => {
+    let index=req.params.ID;
+    if(parseInt(index)<movies.length){
+        movies.splice(parseInt(index),1)
+        res.json({
+            status: 200,
+            message: "delete "+index+" index from array",
+            data:movies
+        });
+    }
+    else{
+        res.json({
+            status: 404,
+            error:true,
+            message: "the movie "+parseInt(index)+" does not exist"
+        });
+
+    }
+    
 });
 
 app.get('/movies/read/by-date', (req, res) => {
