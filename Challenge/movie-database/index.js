@@ -1,5 +1,9 @@
 var express = require("express");
 var app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 const movies = [{
         title: 'Jaws',
         year: 1975,
@@ -71,10 +75,10 @@ app.get('/movies/read', (req, res) => {
     });
 });
 
-app.get('/movies/add', (req, res) => {
-    let new_title = req.query.title,
-        new_year = req.query.year,
-        new_rate = req.query.rating;
+app.post('/movies/add', (req, res) => {
+    let new_title = req.body.title,
+        new_year = req.body.year,
+        new_rate = req.body.rating;
     if (new_title && new_year.length == 4) {
         if (parseInt(new_rate)) {
             movies.push({
@@ -111,9 +115,9 @@ app.get('/movies/create', (req, res) => {
     });
 });
 
-app.get('/movies/delete/:ID', (req, res) => {
+app.delete('/movies/delete/:ID', (req, res) => {
     let index = req.params.ID;
-    if (parseInt(index) < movies.length) {
+    if (parseInt(index) < movies.length && parseInt(index) >= 0) {
         movies.splice(parseInt(index), 1)
         res.json({
             status: 200,
@@ -163,7 +167,7 @@ app.get('/movies/read/:ID', (req, res) => {
 
 app.get('/movies/id/:ID', (req, res) => {
     let index = parseInt(req.params.ID);
-    if (index && index < movies.length) {
+    if (index >= 0 && index < movies.length) {
         if (index < movies.length) {
             res.json({
                 status: 200,
@@ -179,13 +183,13 @@ app.get('/movies/id/:ID', (req, res) => {
     }
 });
 
-app.get('/movies/update/:ID', (req, res) => {
+app.put('/movies/update/:ID', (req, res) => {
     let update_id = req.params.ID,
-        update_year = req.query.year,
-        update_rate = parseFloat(req.query.rating)
-    update_title = req.query.title;
+        update_year = req.body.year,
+        update_rate = parseFloat(req.body.rating)
+    update_title = req.body.title;
     let flag = 0;
-    if (parseInt(update_id) < movies.length) {
+    if (parseInt(update_id) < movies.length && parseInt(update_id) >= 0) {
         if (update_title) {
             movies[update_id].title = update_title;
             flag = 1;
